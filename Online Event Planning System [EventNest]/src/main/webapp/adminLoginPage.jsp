@@ -19,11 +19,13 @@
   }
 
   #form {
-    width: 350px;
+  	width: 350px;
     height: 300px;
-  	padding: 50px;
+    max-width: 500px; 
+    padding: 50px;
     background-color: #1A0637;
     outline: 1px solid #D15716;
+    box-shadow: 0px 10px 50px #1A0637;
     border-radius: 10px;
   }
 
@@ -103,6 +105,12 @@
     color: #161616;
     cursor: pointer;
   }
+   @media (max-width: 768px) {
+    /* Adjust the form for smaller screens */
+    #form {
+      width: 90%;
+      max-width: none;
+    }
 </style>
 
 </head>
