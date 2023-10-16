@@ -24,6 +24,7 @@
   	padding: 50px;
     background-color: #1A0637;
     outline: 1px solid #D15716;
+    box-shadow: 0px 10px 50px #1A0637;
     border-radius: 10px;
   }
 
