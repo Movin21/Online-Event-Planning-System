@@ -2,10 +2,14 @@ package com.Admin.Controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
+import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
 import com.Admin.Model.Admin;
 import com.Admin.Util.AdminDBUtil;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,16 +35,11 @@ public class adminLoginServlet extends HttpServlet {
 
 		if (isTrue == true) {
 			// attendee retreive
-
-			/*
-			 * List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
-			 * request.setAttribute("attendeeDetails", attendeeDetails);
-			 * 
-			 * RequestDispatcher dis = request.getRequestDispatcher("/adminPortal.jsp");
-			 * dis.forward(request, response);
-			 */
-
+			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
+			request.setAttribute("attendeeDetails", attendeeDetails);
 			// navigate to admin portal
+			RequestDispatcher dis = request.getRequestDispatcher("adminPortal.jsp");
+			dis.forward(request, response);
 
 		} else {
 			// Alert and redirect to the login page
