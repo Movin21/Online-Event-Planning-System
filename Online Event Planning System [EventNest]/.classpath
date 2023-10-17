@@ -16,5 +16,11 @@
 	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/JAR Files/javax.servlet-3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/JAR Files/mysql-connector-java-5.1.48-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/JAR Files/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/Downloads/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/standard-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

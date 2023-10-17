@@ -19,4 +19,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>updateAttendeeServlet</display-name>
+    <servlet-name>updateAttendeeServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.AttendeeSection.Controllers.updateAttendeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateAttendeeServlet</servlet-name>
+    <url-pattern>/updateAttendeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insertAttendeeServlet</display-name>
+    <servlet-name>insertAttendeeServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.AttendeeSection.Controllers.insertAttendeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertAttendeeServlet</servlet-name>
+    <url-pattern>/insertAttendeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteAttendeeServlet</display-name>
+    <servlet-name>deleteAttendeeServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.AttendeeSection.Controllers.deleteAttendeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteAttendeeServlet</servlet-name>
+    <url-pattern>/deleteAttendeeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
