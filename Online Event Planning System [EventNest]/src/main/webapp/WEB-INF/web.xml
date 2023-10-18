@@ -10,6 +10,16 @@
     <servlet-name>adminLoginServlet</servlet-name>
     <url-pattern>/adminLoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>login</display-name>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.Login.Controllers.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
   <display-name>Online Event Planning System [EventNest]</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
