@@ -7,8 +7,9 @@ import java.sql.SQLException;
 public class DBConnectivity {
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/onlineeventmanagementsystem";
-		String user = "root";
-		String password = "movin1234";
+		String user = "root"
+		String password = "Lakmina0115722795";
+		String password = "movin1234"
 
 		Connection con = null;
 
