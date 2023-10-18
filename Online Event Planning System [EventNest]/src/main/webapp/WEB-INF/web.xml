@@ -49,4 +49,14 @@
     <servlet-name>deleteAttendeeServlet</servlet-name>
     <url-pattern>/deleteAttendeeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>selectAttendeeServlet</display-name>
+    <servlet-name>selectAttendeeServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.Event.Controllers.selectAttendeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>selectAttendeeServlet</servlet-name>
+    <url-pattern>/selectAttendeeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -8,7 +8,7 @@ public class DBConnectivity {
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/onlineeventmanagementsystem";
 		String user = "root";
-		String password = "movin123";
+		String password = "movin1234";
 
 		Connection con = null;
 

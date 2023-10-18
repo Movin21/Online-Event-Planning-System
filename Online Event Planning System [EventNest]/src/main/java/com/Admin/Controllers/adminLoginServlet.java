@@ -6,6 +6,8 @@ import java.util.List;
 
 import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
 import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
+import com.Admin.AdminPortalContent.Event.Model.Event;
+import com.Admin.AdminPortalContent.Event.Util.EventDBUtil;
 import com.Admin.Model.Admin;
 import com.Admin.Util.AdminDBUtil;
 
@@ -34,9 +36,14 @@ public class adminLoginServlet extends HttpServlet {
 		boolean isTrue = AdminDBUtil.validate(admin);
 
 		if (isTrue == true) {
-			// attendee retreive
+			// attendee retrieve
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
+			
+			// Event retrieve
+			List<Event> eventDetails = EventDBUtil.getEvent();
+			request.setAttribute("eventDetails", eventDetails);
+						
 			// navigate to admin portal
 			RequestDispatcher dis = request.getRequestDispatcher("adminPortal.jsp");
 			dis.forward(request, response);
