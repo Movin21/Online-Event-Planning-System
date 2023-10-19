@@ -13,7 +13,7 @@
 </head>
 <body>
 <H1>Add new attendee</H1>
-    <form action="AttendeeServlet" method="POST">
+    <form action="insertAttendeeServlet" method="POST">
     <label for="attendeeId">Attendee ID:</label>
     <input type="number" name="attendeeId" required><br>
 

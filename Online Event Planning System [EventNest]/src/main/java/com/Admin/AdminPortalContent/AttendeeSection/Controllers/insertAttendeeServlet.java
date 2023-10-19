@@ -6,6 +6,10 @@ import java.util.List;
 
 import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
 import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
+import com.Admin.AdminPortalContent.Event.Model.Event;
+import com.Admin.AdminPortalContent.Event.Util.EventDBUtil;
+import com.Admin.AdminPortalContent.ServiceProvider.Model.Reservation;
+import com.Admin.AdminPortalContent.ServiceProvider.Utill.ReservationDBUtil;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -40,6 +44,22 @@ public class insertAttendeeServlet extends HttpServlet {
 			// update the view
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
+			// Event retrieve
+			List<Event> eventDetails = EventDBUtil.getEvent();
+			request.setAttribute("eventDetails", eventDetails);
+
+			// Service Provider retrieve
+			List<Reservation> reservations = ReservationDBUtil.getReservations();
+			request.setAttribute("reservations", reservations);
+
+			int atcount = AttendeeDBUtil.countRecords();
+			request.setAttribute("attendeeCount", atcount);
+
+			int rcount = ReservationDBUtil.countRecords();
+			request.setAttribute("ReservationCount", rcount);
+
+			int ecount = EventDBUtil.countRecords();
+			request.setAttribute("EventCount", ecount);
 
 			RequestDispatcher dis = request.getRequestDispatcher("/adminPortal.jsp");
 			dis.forward(request, response);
@@ -53,13 +73,7 @@ public class insertAttendeeServlet extends HttpServlet {
 			// navigate to admin portal
 			response.setContentType("text/html");
 			out.println("<script type = 'text/javascript'> " + "alert('Insertion failed !');"
-					+ "location='adminPortal.jsp'</script>");
-
-			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
-			request.setAttribute("attendeeDetails", attendeeDetails);
-
-			RequestDispatcher dis = request.getRequestDispatcher("/adminPortal.jsp");
-			dis.forward(request, response);
+					+ "location='adminCreateAttendee.jsp'</script>");
 
 		}
 	}
