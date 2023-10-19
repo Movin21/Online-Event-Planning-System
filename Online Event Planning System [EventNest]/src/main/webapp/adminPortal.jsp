@@ -197,17 +197,6 @@ h4 {
             <th>Actions</th>
         </tr>
         <c:forEach var="attendee" items="${attendeeDetails}">
-
-            <c:set var="attendeeId" value="${attendee.attendeeId}" />
-            <c:set var="attendeeName" value="${attendee.attendeeName}" />
-            <c:set var="attendeeAddress" value="${attendee.attendeeAddress}" />
-            <c:set var="attendeePhone" value="${attendee.attendeePhone}" />
-            <c:set var="attendeeEmail" value="${attendee.attendeeEmail}" />
-            <c:set var="tickets" value="${attendee.tickets}" />
-            <c:set var="previouslyAttendedEvents" value="${attendee.previouslyAttendedEvents}" />
-            <c:set var="username" value="${attendee.username}" />
-            <c:set var="password" value="${attendee.password}" />
-
             <tr>
                 <td><c:out value="${attendee.attendeeId}" /></td>
                 <td><c:out value="${attendee.attendeeName}" /></td>
@@ -221,15 +210,15 @@ h4 {
                 <td>
                     <div class="update">
                         <c:url value="adminUpdateAttendee.jsp" var="attendeeUpdate">
-                            <c:param name="attendeeId" value="${attendeeId}" />
-                            <c:param name="attendeeName" value="${attendeeName}" />
-                            <c:param name="attendeeAddress" value="${attendeeAddress}" />
-                            <c:param name="attendeePhone" value="${attendeePhone}" />
-                            <c:param name="attendeeEmail" value="${attendeeEmail}" />
-                            <c:param name="tickets" value="${tickets}" />
-                            <c:param name="previouslyAttendedEvents" value="${previouslyAttendedEvents}" />
-                            <c:param name="username" value="${username}" />
-                            <c:param name="password" value="${password}" />
+                            <c:param name="attendeeId" value="${attendee.attendeeId}" />
+                            <c:param name="attendeeName" value="${attendee.attendeeName}" />
+                            <c:param name="attendeeAddress" value="${attendee.attendeeAddress}" />
+                            <c:param name="attendeePhone" value="${attendee.attendeePhone}" />
+                            <c:param name="attendeeEmail" value="${attendee.attendeeEmail}" />
+                            <c:param name="tickets" value="${attendee.tickets}" />
+                            <c:param name="previouslyAttendedEvents" value="${attendee.previouslyAttendedEvents}" />
+                            <c:param name="username" value="${attendee.username}" />
+                            <c:param name="password" value="${attendee.password}" />
                         </c:url>
                         <a href="${attendeeUpdate}">
                             <input type="button" value="Update" name="update">

@@ -99,4 +99,14 @@
     <servlet-name>deleteServiceProviderServlet</servlet-name>
     <url-pattern>/deleteServiceProviderServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchBarServlet</display-name>
+    <servlet-name>SearchBarServlet</servlet-name>
+    <servlet-class>com.Home.SearchBar.Controller.SearchBarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchBarServlet</servlet-name>
+    <url-pattern>/SearchBarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
