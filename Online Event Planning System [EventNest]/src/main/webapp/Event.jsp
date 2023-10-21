@@ -17,10 +17,9 @@
 	  <div class="cards_container">
             <div class="card">
                 <img src="Images/Content 2 images/6.png"><br>
-                <c:out value="${event.eventID}" />
                 <h3><c:out value="${event.eventName}" /></h3><br>
-                <p>offering personalized solutions and guidance tailored to your unique requirements.</p>
-               <br> <a href="About.php"><h4 class="arrow">About Us --></h4></a>
+                <p><c:out value="${event.eventDescription}" /></p>
+               <br> <a href="About.php"><h4 class="arrow">Get Tickets --></h4></a>
             </div>
       </div>
 			
