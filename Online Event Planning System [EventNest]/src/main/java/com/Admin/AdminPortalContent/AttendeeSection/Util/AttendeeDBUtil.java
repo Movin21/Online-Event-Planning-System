@@ -34,8 +34,8 @@ public class AttendeeDBUtil {
 			preparedStatement.setString(3, attendee.getAttendeeAddress());
 			preparedStatement.setString(4, attendee.getAttendeePhone());
 			preparedStatement.setString(5, attendee.getAttendeeEmail());
-			preparedStatement.setString(8, attendee.getUsername());
-			preparedStatement.setString(9, attendee.getPassword());
+			preparedStatement.setString(6, attendee.getUsername());
+			preparedStatement.setString(7, attendee.getPassword());
 
 			// Execute the query
 			int rowsInserted = preparedStatement.executeUpdate();
