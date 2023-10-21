@@ -12,6 +12,8 @@ import java.util.List;
 
 import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
 import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
+import com.Event.Model.Event;
+import com.Event.Util.EventDBUtil;
 import com.Login.Model.Login;
 import com.Login.Util.AtendeeLoginDBUtil;
 import com.Login.Util.EventPlannerLoginDBUtil;
@@ -39,8 +41,13 @@ public class loginServlet extends HttpServlet {
 			 isTrue = AtendeeLoginDBUtil.validate(lg);
 			 
 			 if (isTrue == true) {
-					// navigate to admin portal
-					RequestDispatcher dis = request.getRequestDispatcher("Home.jsp");
+				 
+				 	// attendee retrieve
+					List<Event> eventDetails = EventDBUtil.getEvent();
+					request.setAttribute("eventDetail", eventDetails);
+				 
+					// navigate to Event page 
+					RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 					dis.forward(request, response);
 
 				} else {
@@ -57,7 +64,11 @@ public class loginServlet extends HttpServlet {
 			
 			
 			if (isTrue == true) {
-				// navigate to admin portal
+				
+				// attendee retrieve
+				List<Event> eventDetails =  EventDBUtil.getEvent();
+				request.setAttribute("eventDetail", eventDetails);
+				
 				RequestDispatcher dis = request.getRequestDispatcher("adminLoginPage.jsp");
 				dis.forward(request, response);
 
@@ -73,7 +84,12 @@ public class loginServlet extends HttpServlet {
 			isTrue =  ServiceProviderLoginDBUtil.validate(lg);
 			
 			if (isTrue == true) {
-				// navigate to admin portal
+				
+				// attendee retrieve
+
+				List<Event> eventDetails =  EventDBUtil.getEvent();
+				request.setAttribute("eventDetail", eventDetails);
+				
 				RequestDispatcher dis = request.getRequestDispatcher("Home.jsp");
 				dis.forward(request, response);
 
