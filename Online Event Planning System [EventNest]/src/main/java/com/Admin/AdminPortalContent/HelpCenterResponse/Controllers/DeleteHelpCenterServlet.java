@@ -1,4 +1,4 @@
-package com.Admin.AdminPortalContent.ServiceProvider.Controller;
+package com.Admin.AdminPortalContent.HelpCenterResponse.Controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,19 +20,22 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class deleteServiceProviderServlet
+ * Servlet implementation class DeleteHelpCenterServlet
  */
-public class deleteServiceProviderServlet extends HttpServlet {
+public class DeleteHelpCenterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String reservationId = request.getParameter("reservationId");
-		boolean isTrue = ReservationDBUtil.deleteReservation(reservationId);
+		String id = request.getParameter("id");
+		boolean isTrue = HelpCenterResponseUtil.deleteHelpCenterEntry(id);
 
 		PrintWriter out = response.getWriter();
-		if (isTrue) {
+		if (isTrue == true) {
 			// update the view
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
@@ -72,6 +75,9 @@ public class deleteServiceProviderServlet extends HttpServlet {
 			response.setContentType("text/html");
 			out.println("<script type = 'text/javascript'> " + "alert('Delete failed !');"
 					+ "location='adminPortal.jsp'</script>");
+
 		}
+
 	}
+
 }
