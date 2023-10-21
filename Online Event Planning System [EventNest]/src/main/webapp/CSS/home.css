@@ -289,6 +289,18 @@ position:relative;
 top: 57px;
 color: white;
 }
+.searchButton {
+    border: none;          /* Remove the border */
+    background: none;      /* Remove the background color (if any) */
+    padding: 0;            /* Remove padding */
+    cursor: pointer;       /* Change cursor to a pointer on hover */
+}
+
+
+.searchButton i.fas.fa-search {
+    font-size: 18px;  
+    
+}
 
 
 

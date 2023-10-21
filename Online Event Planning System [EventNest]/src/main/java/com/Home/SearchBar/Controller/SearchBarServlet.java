@@ -25,16 +25,22 @@ public class SearchBarServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyWord = request.getParameter("keyWord");
-		ArrayList<Event> results = SearchBarUtil.getSearchResult(keyWord);
+		if (!keyWord.isEmpty()) {
+			ArrayList<Event> results = SearchBarUtil.getSearchResult(keyWord);
 
-		if (!results.isEmpty()) {
-			request.setAttribute("results", results);
-			request.getRequestDispatcher("searchResultPage.jsp").forward(request, response);
+			if (!results.isEmpty()) {
+				request.setAttribute("results", results);
+				request.getRequestDispatcher("searchResultPage.jsp").forward(request, response);
+			} else {
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/html");
+				out.println("<script type = 'text/javascript'> "
+						+ "alert('Sorry!! No data available for the Search Query');" + "location='Home.jsp'</script>");
+			}
 		} else {
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
-			out.println("<script type = 'text/javascript'> "
-					+ "alert('Sorry!! No data available for the Search Query');" + "location='Home.jsp'</script>");
+			out.println("<script type = 'text/javascript'> " + "location='Home.jsp'</script>");
 		}
 	}
 
