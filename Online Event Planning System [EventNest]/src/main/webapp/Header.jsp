@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./CSS/Event.css">
     <title>Event Nest</title>
 </head>
 <body>
