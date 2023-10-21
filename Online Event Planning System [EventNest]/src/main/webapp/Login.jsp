@@ -1,145 +1,143 @@
 <jsp:include page="./Header.jsp" />
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* Cards */
-        .cards_container {
-            margin-top: 70px;
-            margin-bottom: 50px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2%;
-            justify-content: space-between;
-            margin: 20px;
-        }
+<meta charset="ISO-8859-1">
+<title>Login</title>
 
-        .card {
-            margin-top: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgb(225, 225, 225);
-            height: 400px;
-            width: 20%;
-            transition: transform 0.7s, box-shadow 0.7s;
-            box-shadow: 0 1px 10px transparent;
-            padding: 3px;
-            position: relative;
-        }
+<style>
+  body{
+  background-color:#e8e8e8;
+  }
+  
+  #form-ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+  }
 
-        .card img {
-            width: 292px;
-            height: 180px;
-        }
+  #form {
+  	width: 350px;
+    height: 300px;
+    max-width: 500px; 
+    padding: 50px;
+    background-color: #1A0637;
+    outline: 1px solid #D15716;
+    box-shadow: 0px 10px 50px #1A0637;
+    border-radius: 10px;
+  }
 
-        .arrow {
-            display: flex;
-            color: #000000;
-        }
 
-        .card h3 {
-            margin-left: 5px;
-        }
+  #welcome-lines {
+    text-align: center;
+    line-height: 1;
+  }
 
-        .card h4 {
-            margin-left: 5px;
-        }
+  #welcome-line-1 {
+    color: #D15716;
+    font-weight: 600;
+    font-size: 40px;
+  }
 
-        .h4tag {
-            margin-top: 5px;
-            margin-right: 190px;
-        }
+  #welcome-line-2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 17px;
+  }
 
-        .venue p {
-            color: #6F7386;
-            font-weight: 100;
-        }
+  #input-area {
+    margin-top: 40px;
+  }
 
-        .card p {
-            font-size: 15px;
-            margin-left: 5px;
-            font-weight: 400;
-        }
+  .form-inp {
+    padding: 11px 25px;
+    background: transparent;
+    border: 1px solid #e3e3e3;
+    line-height: 1;
+    border-radius: 8px;
+  }
 
-        .card a {
-            font-size: 15px;
-            margin-right: 180px;
-            text-decoration: none;
-            margin-top: auto;
-        }
 
-        .buttons {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: transparent;
-        }
+  .form-inp:first-child {
+    margin-bottom: 15px;
+  }
 
-        .button {
-            color: white;
-            background-color: #1E0A3C;
-            padding: 7px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.5s;
-            font-weight: bold;
-        }
+  .form-inp input {
+    width: 100%;
+    background: none;
+    font-size: 14px;
+    color: #e3e3e3;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 
-        .button.update {
-            margin-right: 10px; /* Add 10px margin to the right of the "Update" button */
-        }
+  .form-inp input:focus {
+    outline: none;
+  }
 
-        .button.delete {
-            margin-left: 10px; /* Add 10px margin to the left of the "Delete" button */
-        }
+  #submit-button-cvr {
+    margin-top: 20px;
+  }
 
-        .buttons .button:hover {
-            background-color: #d05716;
-        }
-        
-        .create-event-button {
-            margin: 20px; /* Add margin to separate it from the card container */
-        }
-    </style>
-    <meta charset="UTF-8">
-    <title>Event Nest</title>
+  #submit-button {
+    display: block;
+    width: 100%;
+    color: #D15716;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    padding: 14px 13px 12px 13px;
+    border: 0;
+    outline: 1px solid #D15716;
+    border-radius: 8px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+  }
+
+  #submit-button:hover {
+    transition: all ease-in-out .3s;
+    background-color: #D15716;
+    color: #161616;
+    cursor: pointer;
+  }
+   @media (max-width: 768px) {
+    /* Adjust the form for smaller screens */
+    #form {
+      width: 90%;
+      max-width: none;
+    }
+</style>
+
 </head>
 <body>
-
-<c:out value="${eventDescription}" />
-
-<!-- Create Event Button -->
-<button class="button create-event-button">Create Event</button>
-
-<!-- Event Body -->
-<div class="cards_container">
-    <c:forEach var="event" items="${eventDetail}">
-        <div class="card">
-            <img src="${event.eventImageLink}"><br>
-            <h3><c:out value="${event.eventName}" /></h3><br> 
-            <p><c:out value="${event.eventDescription}" /></p>
-            <div class="venue">
-                <p class="h4tag"><c:out value="${event.venue}" /></p><br>
-            </div>
-            <div class="buttons">
-                <button class="button update">Update</button>
-                <button class="button delete">Delete</button>
-            </div>
+<div id="form-ui">
+  <form action="loginServlet" method="post" id="form">
+    <div id="form-body">
+      <div id="welcome-lines">
+        <div id="welcome-line-1">EventNest</div>
+        <div id="welcome-line-2">Login</div>
+      </div>
+      <div id="input-area">
+        <div class="form-inp">
+          <input placeholder="Username" type="text" class="adminUsername" name="username">
         </div>
-    </c:forEach>
+        <div class="form-inp">
+          <input placeholder="Password" type="password" class="adminPassword" name="password">
+        </div>
+      </div>
+      <div id="submit-button-cvr">
+        <button id="submit-button" type="submit" name="loginbtn" class="adminLoginButton">Log in</button>
+      </div>
+    </div>
+  </form>
 </div>
-
 </body>
 </html>
 
-<jsp:include page="./Footer.jsp" />
+
+<jsp:include page="./Footer.jsp"/>
