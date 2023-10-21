@@ -191,9 +191,7 @@ h4 {
             <th>Address</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Tickets</th>
-            <th>Previously Attended Events</th>
-            <th>Username</th>
+            <th>Uername</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="attendee" items="${attendeeDetails}">
@@ -203,8 +201,6 @@ h4 {
                 <td><c:out value="${attendee.attendeeAddress}" /></td>
                 <td><c:out value="${attendee.attendeePhone}" /></td>
                 <td><c:out value="${attendee.attendeeEmail}" /></td>
-                <td><c:out value="${attendee.tickets}" /></td>
-                <td><c:out value="${attendee.previouslyAttendedEvents}" /></td>
                 <td><c:out value="${attendee.username}" /></td>
 
                 <td>
@@ -215,8 +211,6 @@ h4 {
                             <c:param name="attendeeAddress" value="${attendee.attendeeAddress}" />
                             <c:param name="attendeePhone" value="${attendee.attendeePhone}" />
                             <c:param name="attendeeEmail" value="${attendee.attendeeEmail}" />
-                            <c:param name="tickets" value="${attendee.tickets}" />
-                            <c:param name="previouslyAttendedEvents" value="${attendee.previouslyAttendedEvents}" />
                             <c:param name="username" value="${attendee.username}" />
                             <c:param name="password" value="${attendee.password}" />
                         </c:url>
@@ -226,7 +220,7 @@ h4 {
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <div class="delete">
-                        <a href="deleteAttendeeServlet?username=${username}">
+                        <a href="deleteAttendeeServlet?username=${attendee.username}">
                             <input type="button" value="Delete" name="Delete">
                         </a>
                     </div>

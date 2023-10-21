@@ -30,13 +30,10 @@ public class insertAttendeeServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		int tickets = Integer.parseInt(request.getParameter("tickets"));
-		String previouslyAttendedEvents = request.getParameter("previouslyAttendedEvents");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, tickets,
-				previouslyAttendedEvents, username, password);
+		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, username, password);
 		boolean isTrue = AttendeeDBUtil.insertAttendee(attendee);
 
 		PrintWriter out = response.getWriter();

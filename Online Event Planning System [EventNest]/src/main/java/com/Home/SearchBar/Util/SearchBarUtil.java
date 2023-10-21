@@ -18,7 +18,7 @@ public class SearchBarUtil {
 		con = DBConnectivity.getConnection();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT* FROM event WHERE eventName LIKE '%" + keyWord + "%'";
+			String sql = "SELECT* FROM event WHERE eventName LIKE '%" + keyWord + "'";
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 
@@ -45,5 +45,5 @@ public class SearchBarUtil {
 
 		return eventList;
 	}
-	// override
+
 }

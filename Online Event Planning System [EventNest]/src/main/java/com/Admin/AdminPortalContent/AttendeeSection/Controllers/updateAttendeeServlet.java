@@ -35,13 +35,10 @@ public class updateAttendeeServlet extends HttpServlet {
 		String address = request.getParameter("attendeeAddress");
 		String phone = request.getParameter("attendeePhone");
 		String email = request.getParameter("attendeeEmail");
-		int tickets = Integer.parseInt(request.getParameter("tickets"));
-		String previouslyAttendedEvents = request.getParameter("previouslyAttendedEvents");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, tickets,
-				previouslyAttendedEvents, username, password);
+		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, username, password);
 		boolean isTrue = AttendeeDBUtil.updateAttendee(attendee);
 
 		PrintWriter out = response.getWriter();

@@ -163,7 +163,7 @@ public class ReservationDBUtil {
 	}
 
 	// count Reservations
-	// count Attendee
+
 	public static int countRecords() {
 
 		int count = 0;
