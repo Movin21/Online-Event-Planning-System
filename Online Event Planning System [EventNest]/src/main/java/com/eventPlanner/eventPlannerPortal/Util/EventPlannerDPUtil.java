@@ -1,4 +1,4 @@
-package com.Event.Util;
+package com.eventPlanner.eventPlannerPortal.Util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,7 @@ import java.util.List;
 import com.DBConnection.DBConnectivity;
 import com.Event.Model.Event;
 
-
-public class EventDBUtil {
+public class EventPlannerDPUtil {
 	private static Connection con = null;
 	private static boolean isSuccess;
 	private static PreparedStatement preparedStatement = null;
@@ -55,4 +54,8 @@ public class EventDBUtil {
 
 			return eventList;
 		}
+		
+		
+		
+		
 }

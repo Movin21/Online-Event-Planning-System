@@ -16,6 +16,7 @@
             gap: 2%;
             justify-content: space-between;
             margin: 20px;
+            margin-top: -25px;
         }
 
         .card {
@@ -95,29 +96,23 @@
             font-weight: bold;
         }
 
-        .button.update {
-            margin-right: 10px; /* Add 10px margin to the right of the "Update" button */
-        }
-
-        .button.delete {
-            margin-left: 10px; /* Add 10px margin to the left of the "Delete" button */
-        }
-
         .buttons .button:hover {
             background-color: #d05716;
         }
         
         .create-event-button {
-            margin: 20px; /* Add margin to separate it from the card container */
+            margin-top: 80px;
+            padding: 15px 30px; /* Increase padding for a larger button */
+        }
+
+        .create-event-button:hover {
+            background-color: red; /* Change hover color to red */
         }
     </style>
     <meta charset="UTF-8">
     <title>Event Nest</title>
 </head>
 <body>
-
-<c:out value="${eventDescription}" />
-
 <!-- Create Event Button -->
 <button class="button create-event-button">Create Event</button>
 

@@ -47,7 +47,7 @@ public class loginServlet extends HttpServlet {
 					request.setAttribute("eventDetail", eventDetails);
 				 
 					// navigate to Event page 
-					RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
+					RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 					dis.forward(request, response);
 
 				} else {
