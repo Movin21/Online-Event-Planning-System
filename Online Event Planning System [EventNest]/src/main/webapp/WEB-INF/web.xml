@@ -59,4 +59,54 @@
     <servlet-name>deleteAttendeeServlet</servlet-name>
     <url-pattern>/deleteAttendeeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>selectAttendeeServlet</display-name>
+    <servlet-name>selectAttendeeServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.Event.Controllers.selectAttendeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>selectAttendeeServlet</servlet-name>
+    <url-pattern>/selectAttendeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insertReservationServlet</display-name>
+    <servlet-name>insertReservationServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.ServiceProvider.Controller.insertReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertReservationServlet</servlet-name>
+    <url-pattern>/insertReservationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateServiceProviderServlet</display-name>
+    <servlet-name>updateServiceProviderServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.ServiceProvider.Controller.updateServiceProviderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateServiceProviderServlet</servlet-name>
+    <url-pattern>/updateServiceProviderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteServiceProviderServlet</display-name>
+    <servlet-name>deleteServiceProviderServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.ServiceProvider.Controller.deleteServiceProviderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteServiceProviderServlet</servlet-name>
+    <url-pattern>/deleteServiceProviderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchBarServlet</display-name>
+    <servlet-name>SearchBarServlet</servlet-name>
+    <servlet-class>com.Home.SearchBar.Controller.SearchBarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchBarServlet</servlet-name>
+    <url-pattern>/SearchBarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

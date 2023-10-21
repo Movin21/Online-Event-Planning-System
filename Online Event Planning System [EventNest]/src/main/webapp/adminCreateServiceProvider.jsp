@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert Attendee </title>
+    <title>Insert Reservation</title>
     <style>
   body {
     margin-top: 80px;
@@ -61,41 +61,36 @@
     background-color: #FF7F43;
   }
 </style>
-
 </head>
 <body>
-<H1>Add new attendee</H1>
-    <form action="insertAttendeeServlet" method="POST">
-    <label for="attendeeId">Attendee ID:</label>
-    <input type="number" name="attendeeId" required><br>
+    <h1>Add new Reservation</h1>
+    <form action="insertReservationServlet" method="POST">
+        <label for="reservationId">Reservation ID:</label>
+        <input type="number" name="reservationId" required><br>
 
-    <label for="attendeeName">Name:</label>
-    <input type="text" name="attendeeName" required><br>
+        <label for="reservationName">Name:</label>
+        <input type="text" name="reservationName" required><br>
 
-    <label for="address">Address:</label>
-    <input type="text" name="address" required><br>
+        <label for="numberOfCrew">Number of Crew:</label>
+        <input type="number" name="numberOfCrew" required><br>
 
-    <label for="phone">Phone:</label>
-    <input type="text" name="phone" required><br>
+        <label for="reservationType">Type:</label>
+        <input type="text" name="reservationType" required><br>
 
-    <label for="email">Email:</label>
-    <input type="text" name="email" required><br>
+        <label for="reservationDescription">Description:</label>
+        <input type="text" name="reservationDescription" required><br>
 
-    <label for="tickets">Number of Tickets:</label>
-    <input type="number" name="tickets" required><br>
+        <label for="reservationPrice">Price:</label>
+        <input type="number" name="reservationPrice" required><br>
 
-    <label for="previouslyAttendedEvents">Previously Attended Events:</label>
-    <input type="text" name="previouslyAttendedEvents" required><br>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
 
-    <label for="username">Username:</label>
-    <input type="text" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br>
-
-    <input type="submit" value="Insert">
-</form>
-
+        <input type="submit" value="Insert">
+    </form>
 </body>
 </html>
 <jsp:include page="./Footer.jsp" />

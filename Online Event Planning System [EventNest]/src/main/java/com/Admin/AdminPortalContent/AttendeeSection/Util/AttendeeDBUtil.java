@@ -80,9 +80,9 @@ public class AttendeeDBUtil {
 			preparedStatement.setInt(9, attendee.getAttendeeId());
 
 			// Execute the query
-			int rowsInserted = preparedStatement.executeUpdate();
+			int rowsUpdated = preparedStatement.executeUpdate();
 
-			if (rowsInserted > 0) {
+			if (rowsUpdated > 0) {
 				isSuccess = true;
 			} else {
 				isSuccess = false;
@@ -163,5 +163,28 @@ public class AttendeeDBUtil {
 
 		return attendeeList;
 
+	}
+
+	// count Attendee
+	public static int countRecords() {
+
+		int count = 0;
+
+		con = DBConnectivity.getConnection();
+		try {
+
+			String sql = "SELECT COUNT(*) FROM Attendee";
+
+			preparedStatement = con.prepareStatement(sql);
+			rs = preparedStatement.executeQuery();
+
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return count;
 	}
 }
