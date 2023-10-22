@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,15 @@
         <!--logo-->
         <a href="home.html"><img class="logo1" src="./images/Screenshot 2023-10-01 212552.png" alt="EventNest"></a>
         <!--search bar-->
+        
             <div class="search-bar">
-                <input type="text" placeholder="Search events....">
-                <a href="#">
+            
+                <input type="text" placeholder="Search events...." name="keyWord">
+                
+                 <c:url value="SearchBarServlet" var="SearchBarServlet">
+                            <c:param name="keyWord" value="${keyWord}" />
+                        </c:url>
+                <a href="${SearchBarServlet}">
                     <i class="fas fa-search"></i>
                 </a>
             </div>

@@ -59,8 +59,6 @@
     <servlet-name>deleteAttendeeServlet</servlet-name>
     <url-pattern>/deleteAttendeeServlet</url-pattern>
   </servlet-mapping>
-<<<<<<< Updated upstream
-=======
   <servlet>
     <description></description>
     <display-name>selectAttendeeServlet</display-name>
@@ -141,5 +139,4 @@
     <servlet-name>updateEventServlet</servlet-name>
     <url-pattern>/updateEventServlet</url-pattern>
   </servlet-mapping>
->>>>>>> Stashed changes
 </web-app>

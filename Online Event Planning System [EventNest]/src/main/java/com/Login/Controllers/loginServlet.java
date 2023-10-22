@@ -90,7 +90,7 @@ public class loginServlet extends HttpServlet {
 				List<Event> eventDetails =  EventDBUtil.getEvent();
 				request.setAttribute("eventDetail", eventDetails);
 				
-				RequestDispatcher dis = request.getRequestDispatcher("#");
+				RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
 				dis.forward(request, response);
 
 			} else {
