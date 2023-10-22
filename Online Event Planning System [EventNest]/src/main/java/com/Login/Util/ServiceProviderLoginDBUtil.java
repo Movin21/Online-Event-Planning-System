@@ -16,7 +16,7 @@ public class ServiceProviderLoginDBUtil {
 	public static boolean validate(Login login) {
 		try {
 			con = DBConnectivity.getConnection();
-			String sql = "SELECT * FROM event WHERE username = ? AND Password = ? ";
+			String sql = "SELECT * FROM reservation WHERE username = ? AND Password = ? ";
 			preparedStatement = con.prepareStatement(sql);
 			
 			//Set the values for the parameatrs

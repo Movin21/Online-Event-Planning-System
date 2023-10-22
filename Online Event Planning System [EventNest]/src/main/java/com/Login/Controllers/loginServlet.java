@@ -38,7 +38,7 @@ public class loginServlet extends HttpServlet {
 		boolean isTrue = false;
 		
 		 if(letter1 == 'E' && letter2 == 'P') {
-			 isTrue = AtendeeLoginDBUtil.validate(lg);
+			 isTrue = EventPlannerLoginDBUtil.validate(lg);
 			 
 			 if (isTrue == true) {
 				 
@@ -58,9 +58,9 @@ public class loginServlet extends HttpServlet {
 							+ "location='Login.jsp'</script>");
 				}
 			
-			
+			 //Meka Hdapan Passe Sijjagei Thenukagei Array List dapan
 		}else if(letter1 == 'S' && letter2 == 'P'){
-			isTrue = EventPlannerLoginDBUtil.validate(lg);
+			isTrue = ServiceProviderLoginDBUtil.validate(lg);
 			
 			
 			if (isTrue == true) {
@@ -69,7 +69,7 @@ public class loginServlet extends HttpServlet {
 				List<Event> eventDetails =  EventDBUtil.getEvent();
 				request.setAttribute("eventDetail", eventDetails);
 				
-				RequestDispatcher dis = request.getRequestDispatcher("adminLoginPage.jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
 				dis.forward(request, response);
 
 			} else {
@@ -81,7 +81,7 @@ public class loginServlet extends HttpServlet {
 			}
 			
 		}else{
-			isTrue =  ServiceProviderLoginDBUtil.validate(lg);
+			isTrue =  AtendeeLoginDBUtil.validate(lg);
 			
 			if (isTrue == true) {
 				
@@ -90,7 +90,7 @@ public class loginServlet extends HttpServlet {
 				List<Event> eventDetails =  EventDBUtil.getEvent();
 				request.setAttribute("eventDetail", eventDetails);
 				
-				RequestDispatcher dis = request.getRequestDispatcher("Home.jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("#");
 				dis.forward(request, response);
 
 			} else {
@@ -103,7 +103,7 @@ public class loginServlet extends HttpServlet {
 			
 		}
 		 
-		
+	
 
 	}
 	

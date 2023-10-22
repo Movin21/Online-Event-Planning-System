@@ -15,28 +15,27 @@
             flex-wrap: wrap; /* Allow cards to wrap to the next row */
             gap: 2%; /* Adjust the space between cards */
             justify-content: space-between; /* Distribute space evenly between cards */
-            margin:  20px; /* Add a fixed margin on both sides */
-     
+            margin: 20px; /* Add a fixed margin on both sides */
         }
 
         .card {
-        	margin-top: 70px;
+            margin-top: 70px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             background: rgb(225, 225, 225);
-            height: 400px;
-            width: 20%; /* Divide the row into four columns, leave some space for gaps */
+            height: 420px;
+            width: 22%; /* Divide the row into four columns, leave some space for gaps */
             border-radius: 20px;
             transition: transform 0.7s, box-shadow 0.7s; /* Apply transitions to entire card */
             box-shadow: 0 1px 10px transparent; /* Initial shadow is transparent */
-            padding: 3px;
+            padding: 1px;
         }
 
         .card img {
-            width: 292px;
-            height: 180px;
+            width: 318px;
+            height: 190px;
             border-radius: 10px;
+            margin-right: 10px;
         }
 
         .card:hover {
@@ -58,22 +57,50 @@
         .card h3 {
             margin-left: 5px;
         }
-        
-        .card h4{
-        	margin-left: 5px;
+
+        .card h4 {
+            margin-left: 5px;
+        }
+
+        .h4tag {
+            display: flex; /* Make the venue and date flex containers */
+            align-items: center; /* Align items vertically in the flex container */
+            margin-left: 5px; /* Add margin to the left of the text */
+        }
+
+        .location-icon::before {
+            content: "\f041"; /* Unicode for location icon */
+            font-family: FontAwesome; /* Use FontAwesome for the icon */
+            margin-right: 5px; /* Add space between icon and text */
+        }
+
+        .calendar-icon::before {
+            content: "\f073"; /* Unicode for calendar icon */
+            font-family: FontAwesome; /* Use FontAwesome for the icon */
+            margin-right: 5px; /* Add space between icon and text */
+        }
+
+        .venue p, .date p {
+        	
+            color: #6F7386;
+            font-weight: 100;
+        }
+
+        .venue p, .date p {
+            font-style: italic; /* Apply italic style to venue and date text */
         }
         
-		.h4tag{
-			margin-top: 5px;
-			margin-right: 190px;
-		}
-		
-		.venue p{
-			color: #6F7386;
-			font-weight: 100;
-		}
-		
-		
+        .venue{
+        	margin-top: 10px;
+        	display: flex;
+        	justify-content: flex-start;
+        }
+        
+        .align{
+        	justify-content: center;
+        }
+        
+
         .card p {
             font-size: 15px;
             margin-left: 5px;
@@ -105,11 +132,17 @@
 <div class="cards_container">
     <c:forEach var="event" items="${eventDetail}">
         <div class="card">
+        <center>
             <img src="${event.eventImageLink}"><br>
-            <h3><c:out value="${event.eventName}" /></h3><br> 
+            <h3><c:out value="${event.eventName}" /></h3><br>
+        </center>
             <p><c:out value="${event.eventDescription}" /></p>
+        
             <div class="venue">
-            <p class="h4tag"><c:out value="${event.venue}" /></p><br>
+                <span class="location-icon"></span><p class="h4tag"><c:out value="${event.venue}" /></p>
+            </div>
+            <div class="venue">
+            <span class="calendar-icon"></span><p class="h4tag"><c:out value="${event.eventDate}" /></p>
             </div>
             <a href="About.php"><h4 class="arrow">Get Tickets $<c:out value="${event.ticketPrice}" /></h4></a>
         </div>
