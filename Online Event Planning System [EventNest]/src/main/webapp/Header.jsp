@@ -38,7 +38,7 @@
                     <li class="dropdown">
                         <a href="#">Help Center</a>
                         <div class="dropdown-content">
-                            <a href="#">Help Center</a>
+                            <a href="HelpCenter.jsp">Help Center</a>
                             <a href="#">Contact Us</a>
                             <a href="#">fk</a>
                         </div>
