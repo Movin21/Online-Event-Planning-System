@@ -7,28 +7,28 @@
 <title>Login</title>
 
 <style>
-  body{
-  background-color:#e8e8e8;
+  body {
+    background-color: #e8e8e8;
   }
-  
+
   #form-ui {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75vh;
+    margin-top: 40px;
   }
 
   #form {
-  	width: 350px;
-    height: 300px;
-    max-width: 500px; 
+    width: 350px;
+    height: 350px;
+    max-width: 500px;
     padding: 50px;
     background-color: #1A0637;
     outline: 1px solid #D15716;
     box-shadow: 0px 10px 50px #1A0637;
     border-radius: 10px;
   }
-
 
   #welcome-lines {
     text-align: center;
@@ -57,11 +57,7 @@
     border: 1px solid #e3e3e3;
     line-height: 1;
     border-radius: 8px;
-  }
-
-
-  .form-inp:first-child {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .form-inp input {
@@ -72,6 +68,7 @@
     border: none;
     padding: 0;
     margin: 0;
+    
   }
 
   .form-inp input:focus {
@@ -89,7 +86,7 @@
     background-color: transparent;
     font-weight: 600;
     font-size: 14px;
-    margin: 0;
+    margin-top: 60px;
     padding: 14px 13px 12px 13px;
     border: 0;
     outline: 1px solid #D15716;
@@ -105,14 +102,20 @@
     color: #161616;
     cursor: pointer;
   }
-   @media (max-width: 768px) {
-    /* Adjust the form for smaller screens */
-    #form {
-      width: 90%;
-      max-width: none;
-    }
-</style>
 
+  #signup-link {
+    text-align: center;
+    color: White;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  #signup-link a {
+    color: #D15716;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
 </head>
 <body>
 <div id="form-ui">
@@ -133,11 +136,15 @@
       <div id="submit-button-cvr">
         <button id="submit-button" type="submit" name="loginbtn" class="adminLoginButton">Log in</button>
       </div>
+      <div id="signup-link">
+        Don't have an account? <a href="signup.html">Sign up</a>
+      </div>
     </div>
   </form>
 </div>
 </body>
 </html>
+
 
 
 <jsp:include page="./Footer.jsp"/>
