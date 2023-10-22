@@ -115,7 +115,7 @@ public class AttendeeDBUtil {
 			con.close();
 
 		} catch (Exception e) {
-			System.out.print("Insert query failure");
+			System.out.print("Delete query failure");
 			e.printStackTrace();
 		}
 
