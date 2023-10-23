@@ -20,6 +20,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class adminLogin
@@ -40,6 +41,9 @@ public class adminLoginServlet extends HttpServlet {
 		boolean isTrue = AdminDBUtil.validate(admin);
 
 		if (isTrue == true) {
+			// session create
+			HttpSession session = request.getSession();
+			session.setAttribute("username", userName);
 			// attendee retrieve
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
