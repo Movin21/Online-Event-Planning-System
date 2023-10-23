@@ -4,7 +4,7 @@
 <%@ page import="com.Event.Model.Event" %>
 <%@ page import="com.Event.Util.EventDBUtil" %>
 
-<!--Retriving Details Using Scriplets-->
+<!--Retriving Details Using Scriplets!-->
 <%	
 	List<Event> eventDetails = EventDBUtil.getEvent();
     request.setAttribute("eventDetail", eventDetails);
@@ -31,7 +31,7 @@
 <body>
 	<div class="header">
         <!--logo-->
-        <a href="home.html"><img class="logo1" src="./images/Screenshot 2023-10-01 212552.png" alt="EventNest"></a>
+        <a href="Home.jsp"><img class="logo1" src="./images/Screenshot 2023-10-01 212552.png" alt="EventNest"></a>
         <!--search bar-->
         
             <div class="search-bar">
@@ -50,13 +50,13 @@
                 <ul class="nav">
                     <li><a href="#">Find Events</a></li>
                     <li><a href="#">Buy Tickets</a></li>
+                    <li><a href="#">Pricing</a></li>
                     <!--dropdown menu-->
                     <li class="dropdown">
                         <a href="#">Help Center</a>
                         <div class="dropdown-content">
                             <a href="#">Help Center</a>
                             <a href="#">Contact Us</a>
-                            <a href="#">fk</a>
                         </div>
                     </li>
             

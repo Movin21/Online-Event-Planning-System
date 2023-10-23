@@ -9,7 +9,8 @@
     <style>
         /* Background Image */
         body {
-            background-image: url('https://img.freepik.com/free-photo/glowing-stage-light-illuminates-cheering-rock-fans-generated-by-ai_188544-37983.jpg?w=1380&t=st=1697960983~exp=1697961583~hmac=7129313d09423812569154c1eb8994999926d4996f02138680d5c01a6328275a');
+        	width: 100%;
+            background-image: url('https://img.freepik.com/free-photo/glowing-stage-light-illuminates-cheering-rock-fans-generated-by-ai_188544-37983.jpg?w=1380&t=st=1698062974~exp=1698063574~hmac=32d9867b132030d1ee53223403719fb3ce59965df8d7b85304487803b33381b6');
             background-size: cover; /* Adjust background size as needed */
             background-repeat: no-repeat;
             background-attachment: fixed; /* Keeps the image fixed as you scroll */
@@ -24,7 +25,7 @@
         }
 
         .header1 h1 {
-            font-size: 36px;
+            font-size: 45px;
             margin: 0;
         }
 
@@ -53,16 +54,16 @@
             display: flex;
             flex-direction: column;
             background: rgb(225, 225, 225);
-            height: 420px;
+            height: 425px;
             width: 22%;
             transition: transform 0.7s, box-shadow 0.7s;
             box-shadow: 0 1px 10px transparent;
-            padding: 1px;
+            padding: 2px;
             position: relative;
         }
 
         .card img {
-            width: 318px;
+            width: 315px;
             height: 180px;
             margin-right: 10px;
         }
@@ -170,13 +171,13 @@
             color: white;
             border: none;
             border-radius: 0;
-            padding: 25px 80px;
+            padding: 20px 70px;
             font-size: 20px;
             margin-top: 50px;
             transition: background-color 0.3s;
             text-decoration: none;
         }
-
+        
         .create-event-button:hover {
             background-color: #d05716;
         }
@@ -202,7 +203,7 @@
 
     <!-- Create Event Button -->
     <a href="CreateEvent.jsp">
-        <button class="create-event-button">Create Event</button>
+        <button class="create-event-button"><h3>Create Event</h3></button>
     </a>
 
     <!-- Event Body -->
