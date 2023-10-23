@@ -9,8 +9,13 @@
 
 <style>
 
-.mySlides {display: none;}
-img {vertical-align: middle;}
+.mySlides {
+display: none;
+margin-top: 14.6px;
+}
+img {
+vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
