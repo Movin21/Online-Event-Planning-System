@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
-import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
 import com.Event.Model.Event;
 import com.Event.Util.EventDBUtil;
 import com.Login.Model.Login;
@@ -41,11 +39,7 @@ public class loginServlet extends HttpServlet {
 			 isTrue = EventPlannerLoginDBUtil.validate(lg);
 			 
 			 if (isTrue == true) {
-				 
-				 	// attendee retrieve
-					List<Event> eventDetails = EventDBUtil.getEvent();
-					request.setAttribute("eventDetail", eventDetails);
-				 
+
 					// navigate to Event page 
 					RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 					dis.forward(request, response);
@@ -64,12 +58,8 @@ public class loginServlet extends HttpServlet {
 			
 			
 			if (isTrue == true) {
-				
-				// attendee retrieve
-				List<Event> eventDetails =  EventDBUtil.getEvent();
-				request.setAttribute("eventDetail", eventDetails);
-				
-				RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
+							
+				RequestDispatcher dis = request.getRequestDispatcher("#");
 				dis.forward(request, response);
 
 			} else {
@@ -84,12 +74,7 @@ public class loginServlet extends HttpServlet {
 			isTrue =  AtendeeLoginDBUtil.validate(lg);
 			
 			if (isTrue == true) {
-				
-				// attendee retrieve
-
-				List<Event> eventDetails =  EventDBUtil.getEvent();
-				request.setAttribute("eventDetail", eventDetails);
-				
+							
 				RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
 				dis.forward(request, response);
 

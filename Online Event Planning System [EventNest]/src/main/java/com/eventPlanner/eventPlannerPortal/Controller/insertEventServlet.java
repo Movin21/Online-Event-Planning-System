@@ -22,7 +22,7 @@ public class insertEventServlet extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		//Getting the Values from the fields for insert
 		int eventId = Integer.parseInt(request.getParameter("eventId"));
 		String eventName = request.getParameter("eventName");
 		String venue = request.getParameter("venue");
@@ -38,11 +38,8 @@ public class insertEventServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		if (isTrue == true) {
-			//Getting the event details
-			List<Event> eventDetails = EventDBUtil.getEvent();
-			request.setAttribute("eventDetail", eventDetails);
-		 
 			
+			// navigate to eventPlanner portal
 			RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 			dis.forward(request, response);
 			

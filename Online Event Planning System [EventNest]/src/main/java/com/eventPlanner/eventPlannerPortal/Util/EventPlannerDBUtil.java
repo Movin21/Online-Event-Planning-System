@@ -17,7 +17,7 @@ public class EventPlannerDBUtil {
 	private static Statement stmt;
 	private static ResultSet rs;
 	
-		// Select Event
+		//Retrive Event Details from Database
 		public static List<Event> getEvent() {
 			
 			ArrayList<Event> eventList = new ArrayList<>();
@@ -54,7 +54,7 @@ public class EventPlannerDBUtil {
 
 			return eventList;
 		}	
-		//Insert Events
+		//Insert Event Details to the Database
 		public static boolean insertEvent(Event event) {
 			con = DBConnectivity.getConnection();
 			try {
@@ -95,7 +95,7 @@ public class EventPlannerDBUtil {
 			return isSuccess;
 		}
 		
-		// Update Event Details
+		//Update Event Details in the Database
 		public static boolean updateEvent(Event event) {
 			con = DBConnectivity.getConnection();
 			try {
@@ -105,7 +105,6 @@ public class EventPlannerDBUtil {
 				preparedStatement = con.prepareStatement(sql);
 
 				// Set the values 
-
 				preparedStatement.setInt(1, event.getEventID());
 				preparedStatement.setString(2, event.getEventName());
 				preparedStatement.setString(3, event.getVenue());
@@ -136,14 +135,15 @@ public class EventPlannerDBUtil {
 
 		}
 		
-		// Delete Attendee
+		//Delete Event Details from Database
 		public static boolean deleteEvent(String eventId) {
 			con = DBConnectivity.getConnection();
 			try {
 				String sql = "DELETE FROM event WHERE eventId = ?";
 
 				preparedStatement = con.prepareStatement(sql);
-
+				
+				// Set the values
 				preparedStatement.setString(1, eventId);
 
 				// Execute the query

@@ -19,16 +19,13 @@ public class deleteEventServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Getting the EventID for Delete
 		String eventId = request.getParameter("eventId");
 		boolean isTrue = EventPlannerDBUtil.deleteEvent(eventId);
 
 		PrintWriter out = response.getWriter();
 		if (isTrue) {
-			//Getting the event details
-			List<Event> eventDetails = EventDBUtil.getEvent();
-			request.setAttribute("eventDetail", eventDetails);
-		 
-			
+			//Redirecting to the ecntPlannerProtal
 			RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 			dis.forward(request, response);
 			

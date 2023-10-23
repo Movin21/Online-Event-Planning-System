@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+
 <style>
 
 .mySlides {display: none;}
@@ -65,6 +68,28 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
+/* Additional content styles */
+.additional-content {
+  text-align: center;
+  font-size: 60px; /* Very big font size */
+  margin-top: 20px; /* Add some margin for separation */
+  color: #1E0A3C; /* Use specified color for text */
+  font-family: Nunito;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+.sub-content {
+  font-size: 28px; /* Slightly smaller font size */
+  color: #1E0A3C; /* Use specified color for text */
+  font-family: Nunito;
+  margin-top: 10px;
+}
+  /* Font-family for the introduction paragraph */
+  .intro-paragraph {
+    justify-content: center;
+  }
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
@@ -110,6 +135,16 @@ img {vertical-align: middle;}
 </div>
 
 </div>
+
+<!-- Additional content -->
+<div class="additional-content">What's happening in the World</div>
+<div class="sub-content">Let's uncover the best events taking place in Everywhere</div>
+
+<!-- Introduction paragraph with specified font-family -->
+<div class="intro-paragraph">
+  Welcome to EventNest, your one-stop destination for discovering and celebrating the world of events. Whether you're passionate about music, art, sports, or culture, EventNest brings you closer to the most exciting and diverse events happening in your city and beyond. Our platform is designed to make event exploration and ticket booking a breeze, ensuring you never miss out on memorable experiences. Join us in your journey of connecting with like-minded enthusiasts and embracing the spirit of every event. Let's make memories together!
+</div>
+
 <script>
 		let slideIndex = 0;
 		showSlides();
