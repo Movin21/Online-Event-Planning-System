@@ -2,8 +2,8 @@
 <%
   // Check if the session exists
   if (session.getAttribute("username") == null) {
-      response.sendRedirect("adminLoginPage.jsp");
-  }else{
+      response.sendRedirect("adminLoginPage.jsp");}
+  else {
 	  session.invalidate();
   }
 %>

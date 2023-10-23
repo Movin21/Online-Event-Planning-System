@@ -18,6 +18,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class updateServiceProviderServlet
@@ -46,6 +47,9 @@ public class updateServiceProviderServlet extends HttpServlet {
 		boolean isSuccess = ReservationDBUtil.updateReservation(reservation);
 		PrintWriter out = response.getWriter();
 		if (isSuccess) {
+			// session token create
+			HttpSession session = request.getSession();
+			session.setAttribute("username", "token");
 			// update the view
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);

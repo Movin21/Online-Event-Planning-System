@@ -14,15 +14,14 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/javax.servlet-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/jstl-api-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/mysql-connector-java-5.1.48-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/standard-2.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/movin/git/repository/Online Event Planning System [EventNest]/jar/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/standard-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/javax.servlet-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/movin/OneDrive/Desktop/lib/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

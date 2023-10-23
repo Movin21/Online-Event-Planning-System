@@ -18,6 +18,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class updateAttendee
@@ -44,7 +45,10 @@ public class updateAttendeeServlet extends HttpServlet {
 		boolean isTrue = AttendeeDBUtil.updateAttendee(attendee);
 
 		PrintWriter out = response.getWriter();
-		if (isTrue == true) {
+		if (isTrue) {
+			// session token create
+			HttpSession session = request.getSession();
+			session.setAttribute("username", "token");
 			// update the view
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);

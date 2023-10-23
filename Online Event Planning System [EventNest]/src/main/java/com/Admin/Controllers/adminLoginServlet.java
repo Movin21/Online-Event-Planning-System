@@ -40,7 +40,7 @@ public class adminLoginServlet extends HttpServlet {
 		Admin admin = new Admin(userName, password);
 		boolean isTrue = AdminDBUtil.validate(admin);
 
-		if (isTrue == true) {
+		if (isTrue) {
 			// session create
 			HttpSession session = request.getSession();
 			session.setAttribute("username", userName);
