@@ -78,11 +78,7 @@ public class updateServiceProviderServlet extends HttpServlet {
 
 			RequestDispatcher dis = request.getRequestDispatcher("/adminPortal.jsp");
 			dis.forward(request, response);
-			// Alert Success
-			// navigate to admin portal
-			response.setContentType("text/html");
-			out.println("<script type = 'text/javascript'> " + "alert('Update successfull!');"
-					+ "location='adminPortal.jsp'</script>");
+
 		} else {
 			// Alert failed
 			// navigate to admin portal

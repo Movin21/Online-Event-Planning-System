@@ -34,8 +34,7 @@ public class HelpCenterServlet extends HttpServlet {
 		boolean isTrue = HelpCenterUtil.passMsg(Msg);
 		PrintWriter out = response.getWriter();
 		if (isTrue) {
-			// Alert Success
-			// navigate to Success
+			// navigate to response
 			response.setContentType("text/html");
 			out.println("<script type = 'text/javascript'> " + "location='HelpCenterResponse.jsp'</script>");
 		} else {
