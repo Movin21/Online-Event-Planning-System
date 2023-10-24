@@ -9,7 +9,6 @@
 <%@ page import="com.ServiceProvider.Model.*" %>
 
 
-
 <!--Retriving Details Using Scriplets!-->
 <%	
 	List<Event> eventDetails = EventDBUtil.getEvent();
