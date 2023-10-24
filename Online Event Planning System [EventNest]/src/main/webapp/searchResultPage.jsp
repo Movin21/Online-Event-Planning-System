@@ -39,8 +39,10 @@
             display: flex;
             flex-direction: column;
             background: rgb(225, 225, 225);
+
             height: 420px;
             width: 22%; /* Divide the row into four columns, leave some space for gaps */
+
             border-radius: 20px;
             transition: transform 0.7s, box-shadow 0.7s; /* Apply transitions to entire card */
             box-shadow: 0 1px 10px transparent; /* Initial shadow is transparent */
