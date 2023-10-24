@@ -111,6 +111,35 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+
+    <display-name>deleteEventServlet</display-name>
+    <servlet-name>deleteEventServlet</servlet-name>
+    <servlet-class>com.eventPlanner.eventPlannerPortal.Controller.deleteEventServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteEventServlet</servlet-name>
+    <url-pattern>/deleteEventServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>insertEventServlet</display-name>
+    <servlet-name>insertEventServlet</servlet-name>
+    <servlet-class>com.eventPlanner.eventPlannerPortal.Controller.insertEventServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertEventServlet</servlet-name>
+    <url-pattern>/insertEventServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateEventServlet</display-name>
+    <servlet-name>updateEventServlet</servlet-name>
+    <servlet-class>com.eventPlanner.eventPlannerPortal.Controller.updateEventServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateEventServlet</servlet-name>
+    <url-pattern>/updateEventServlet</url-pattern>
+=======
     <display-name>HelpCenterServlet</display-name>
     <servlet-name>HelpCenterServlet</servlet-name>
     <servlet-class>com.HelpCenter.Controllers.HelpCenterServlet</servlet-class>
@@ -138,5 +167,6 @@
   <servlet-mapping>
     <servlet-name>deleteHelpCenterServlet</servlet-name>
     <url-pattern>/deleteHelpCenterServlet</url-pattern>
+
   </servlet-mapping>
 </web-app>

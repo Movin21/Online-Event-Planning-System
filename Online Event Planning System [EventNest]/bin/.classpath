@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/javax.servlet-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/standard-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yasas Lakmina/Documents/Jar/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

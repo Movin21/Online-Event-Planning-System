@@ -1,13 +1,17 @@
 package com.Home.SearchBar.Controller;
 
+
 /*Author:IT22332608 | Liyanage M.I.H*/
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import com.Admin.AdminPortalContent.Event.Model.Event;
+
 import com.Home.SearchBar.Util.SearchByName;
 import com.Home.SearchBar.Util.SearchByVenue;
+
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -27,6 +31,7 @@ public class SearchBarServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyWord = request.getParameter("keyWord");
+
 		if (!keyWord.isEmpty()) {
 			ArrayList<Event> resultsByName = SearchByName.getSearchResult(keyWord);
 			ArrayList<Event> resultsByVenue = SearchByVenue.getSearchResult(keyWord);
@@ -47,6 +52,7 @@ public class SearchBarServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
 			out.println("<script type = 'text/javascript'> " + "location='Home.jsp'</script>");
+
 		}
 	}
 

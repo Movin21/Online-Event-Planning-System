@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
-import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
 import com.Event.Model.Event;
 import com.Event.Util.EventDBUtil;
 import com.Login.Model.Login;
@@ -38,14 +36,10 @@ public class loginServlet extends HttpServlet {
 		boolean isTrue = false;
 		
 		 if(letter1 == 'E' && letter2 == 'P') {
-			 isTrue = AtendeeLoginDBUtil.validate(lg);
+			 isTrue = EventPlannerLoginDBUtil.validate(lg);
 			 
 			 if (isTrue == true) {
-				 
-				 	// attendee retrieve
-					List<Event> eventDetails = EventDBUtil.getEvent();
-					request.setAttribute("eventDetail", eventDetails);
-				 
+
 					// navigate to Event page 
 					RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 					dis.forward(request, response);
@@ -58,18 +52,14 @@ public class loginServlet extends HttpServlet {
 							+ "location='Login.jsp'</script>");
 				}
 			
-			
+			 //Meka Hdapan Passe Sijjagei Thenukagei Array List dapan
 		}else if(letter1 == 'S' && letter2 == 'P'){
-			isTrue = EventPlannerLoginDBUtil.validate(lg);
+			isTrue = ServiceProviderLoginDBUtil.validate(lg);
 			
 			
 			if (isTrue == true) {
-				
-				// attendee retrieve
-				List<Event> eventDetails =  EventDBUtil.getEvent();
-				request.setAttribute("eventDetail", eventDetails);
-				
-				RequestDispatcher dis = request.getRequestDispatcher("adminLoginPage.jsp");
+							
+				RequestDispatcher dis = request.getRequestDispatcher("#");
 				dis.forward(request, response);
 
 			} else {
@@ -81,16 +71,11 @@ public class loginServlet extends HttpServlet {
 			}
 			
 		}else{
-			isTrue =  ServiceProviderLoginDBUtil.validate(lg);
+			isTrue =  AtendeeLoginDBUtil.validate(lg);
 			
 			if (isTrue == true) {
-				
-				// attendee retrieve
-
-				List<Event> eventDetails =  EventDBUtil.getEvent();
-				request.setAttribute("eventDetail", eventDetails);
-				
-				RequestDispatcher dis = request.getRequestDispatcher("Home.jsp");
+							
+				RequestDispatcher dis = request.getRequestDispatcher("Event.jsp");
 				dis.forward(request, response);
 
 			} else {
@@ -103,7 +88,7 @@ public class loginServlet extends HttpServlet {
 			
 		}
 		 
-		
+	
 
 	}
 	

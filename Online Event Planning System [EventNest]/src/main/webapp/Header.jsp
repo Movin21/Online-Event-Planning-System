@@ -1,3 +1,16 @@
+
+<!--Importing the packages-->
+<%@ page import="java.util.List" %>
+<%@ page import="com.Event.Model.Event" %>
+<%@ page import="com.Event.Util.EventDBUtil" %>
+
+<!--Retriving Details Using Scriplets!-->
+<%	
+	List<Event> eventDetails = EventDBUtil.getEvent();
+    request.setAttribute("eventDetail", eventDetails);
+%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -18,10 +31,11 @@
 <body>
 	<div class="header">
         <!--logo-->
-        <a href="home.html"><img class="logo1" src="./images/Screenshot 2023-10-01 212552.png" alt="EventNest"></a>
+        <a href="Home.jsp"><img class="logo1" src="./images/Screenshot 2023-10-01 212552.png" alt="EventNest"></a>
         <!--search bar-->
         
             <div class="search-bar">
+
     <form action="SearchBarServlet" method="GET">
         <input type="text" placeholder="Search events...." name="keyWord">
         <button type="submit" class="searchButton">
@@ -29,18 +43,19 @@
         </button>
     </form>
 </div>
+
             <!--navigation bar-->
             <div class="menu-item">
                 <ul class="nav">
                     <li><a href="#">Find Events</a></li>
                     <li><a href="#">Buy Tickets</a></li>
+                    <li><a href="#">Pricing</a></li>
                     <!--dropdown menu-->
                     <li class="dropdown">
                         <a href="#">Help Center</a>
                         <div class="dropdown-content">
                             <a href="HelpCenter.jsp">Help Center</a>
                             <a href="#">Contact Us</a>
-                            <a href="#">fk</a>
                         </div>
                     </li>
             
