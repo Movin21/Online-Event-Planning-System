@@ -149,7 +149,7 @@
     
         <div class="w3-quarter">
             <img src="./images/images.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3>Yasas Lakmina</h3>
+            <h3>Yasas</h3>
             <p>Web Designer</p>
         </div>
     

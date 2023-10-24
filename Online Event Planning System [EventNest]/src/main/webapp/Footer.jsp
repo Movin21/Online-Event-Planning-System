@@ -22,7 +22,7 @@
                     <h4>get help</h4>
                     <ul>
                     	<li><a href="Pricing.jsp">Pricing</a></li>
-                        <li><a href="Events.jsp">Find Events</a></li>
+                        <li><a href="Event.jsp">Find Events</a></li>
                         <li><a href="#">Buy Tickets</a></li>
 
                     </ul>
@@ -43,7 +43,7 @@
                         </div>
                 </div>
             </div>
-            <div calss="copyright">
+            <div class="copyright">
                 <p class="copyrightText"> © EventNest 2023 </p>
             </div>
         </div>
