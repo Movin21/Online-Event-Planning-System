@@ -13,6 +13,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,12 +31,14 @@ public class loginServlet extends HttpServlet {
 		char letter2 = userName.charAt(1);
 
 		boolean isTrue = false;
-
+		HttpSession session = request.getSession();
 		if (letter1 == 'E' && letter2 == 'P') {
 			isTrue = EventPlannerLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-
+				//session create
+				
+				session.setAttribute("userName", userName);
 				// navigate to Event page
 				RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 				dis.forward(request, response);
@@ -48,12 +51,11 @@ public class loginServlet extends HttpServlet {
 						+ "location='Login.jsp'</script>");
 			}
 
-			// Meka Hdapan Passe Sijjagei Thenukagei Array List dapan
 		} else if (letter1 == 'S' && letter2 == 'P') {
 			isTrue = ServiceProviderLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-
+			
 				RequestDispatcher dis = request.getRequestDispatcher("res-list.jsp");
 				dis.forward(request, response);
 
@@ -69,7 +71,9 @@ public class loginServlet extends HttpServlet {
 			isTrue = AtendeeLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-
+							
+				// navigate to  customer portal
+				request.setAttribute("username",userName);
 				RequestDispatcher dis = request.getRequestDispatcher("attendee.jsp");
 				dis.forward(request, response);
 

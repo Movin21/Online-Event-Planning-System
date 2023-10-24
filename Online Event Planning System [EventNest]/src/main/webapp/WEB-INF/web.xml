@@ -111,7 +111,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-
     <display-name>deleteEventServlet</display-name>
     <servlet-name>deleteEventServlet</servlet-name>
     <servlet-class>com.eventPlanner.eventPlannerPortal.Controller.deleteEventServlet</servlet-class>
@@ -140,7 +139,7 @@
     <servlet-name>updateEventServlet</servlet-name>
     <url-pattern>/updateEventServlet</url-pattern>
   </servlet-mapping>
-  	<servlet>
+  <servlet>
     <display-name>HelpCenterServlet</display-name>
     <servlet-name>HelpCenterServlet</servlet-name>
     <servlet-class>com.HelpCenter.Controllers.HelpCenterServlet</servlet-class>
@@ -168,7 +167,6 @@
   <servlet-mapping>
     <servlet-name>deleteHelpCenterServlet</servlet-name>
     <url-pattern>/deleteHelpCenterServlet</url-pattern>
-
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -199,5 +197,25 @@
   <servlet-mapping>
     <servlet-name>DeleteReservationServlet</servlet-name>
     <url-pattern>/DeleteReservationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignupServlet</display-name>
+    <servlet-name>SignupServlet</servlet-name>
+    <servlet-class>com.Customer.Signup.SignupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupServlet</servlet-name>
+    <url-pattern>/SignupServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>customerUpdateServlet</display-name>
+    <servlet-name>customerUpdateServlet</servlet-name>
+    <servlet-class>com.Customer.Signup.customerUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>customerUpdateServlet</servlet-name>
+    <url-pattern>/customerUpdateServlet</url-pattern>
   </servlet-mapping>
 </web-app>

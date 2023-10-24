@@ -131,7 +131,7 @@ public class AttendeeDBUtil {
 		con = DBConnectivity.getConnection();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT* FROM Attendee";
+			String sql = "SELECT* FROM attendee";
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {

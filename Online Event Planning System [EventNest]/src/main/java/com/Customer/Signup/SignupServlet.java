@@ -9,18 +9,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 
-
-
-
-
+/**
+ * Servlet implementation class SignupServlet
+ */
 public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		int id = 1;
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
@@ -57,5 +56,6 @@ public class SignupServlet extends HttpServlet {
 		
 		
 	}
+	}
 
-}
+

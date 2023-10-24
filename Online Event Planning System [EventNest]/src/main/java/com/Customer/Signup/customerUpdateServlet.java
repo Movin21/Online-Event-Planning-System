@@ -7,16 +7,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Servlet implementation class customerUpdate
+ * Servlet implementation class customerUpdateServlet
  */
 public class customerUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -42,6 +41,6 @@ public class customerUpdateServlet extends HttpServlet {
 			dis.forward(request, response);
 		}
 	}
-	}
+	
 
-
+}

@@ -35,7 +35,7 @@ h2{
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #FFA500;
+    color: #d05716;
     text-transform: uppercase;
     text-align: center;
 }
