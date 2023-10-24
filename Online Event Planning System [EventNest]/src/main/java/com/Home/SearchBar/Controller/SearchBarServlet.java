@@ -6,7 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import com.Admin.AdminPortalContent.Event.Model.Event;
-import com.Home.SearchBar.Util.SearchBarUtil;
+import com.Home.SearchBar.Util.SearchByName;
+import com.Home.SearchBar.Util.SearchByVenue;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -27,10 +28,14 @@ public class SearchBarServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String keyWord = request.getParameter("keyWord");
 		if (!keyWord.isEmpty()) {
-			ArrayList<Event> results = SearchBarUtil.getSearchResult(keyWord);
+			ArrayList<Event> resultsByName = SearchByName.getSearchResult(keyWord);
+			ArrayList<Event> resultsByVenue = SearchByVenue.getSearchResult(keyWord);
 
-			if (!results.isEmpty()) {
-				request.setAttribute("results", results);
+			if (!resultsByName.isEmpty()) {
+				request.setAttribute("results", resultsByName);
+				request.getRequestDispatcher("searchResultPage.jsp").forward(request, response);
+			} else if (!resultsByVenue.isEmpty()) {
+				request.setAttribute("results", resultsByVenue);
 				request.getRequestDispatcher("searchResultPage.jsp").forward(request, response);
 			} else {
 				PrintWriter out = response.getWriter();
