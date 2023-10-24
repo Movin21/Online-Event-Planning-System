@@ -139,4 +139,34 @@
     <servlet-name>deleteHelpCenterServlet</servlet-name>
     <url-pattern>/deleteHelpCenterServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InsertReservationServlet</display-name>
+    <servlet-name>InsertReservationServlet</servlet-name>
+    <servlet-class>com.ServiceProvider.Controllers.InsertReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertReservationServlet</servlet-name>
+    <url-pattern>/InsertReservationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateReservationServlet</display-name>
+    <servlet-name>UpdateReservationServlet</servlet-name>
+    <servlet-class>com.ServiceProvider.Controllers.UpdateReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateReservationServlet</servlet-name>
+    <url-pattern>/UpdateReservationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteReservationServlet</display-name>
+    <servlet-name>DeleteReservationServlet</servlet-name>
+    <servlet-class>com.ServiceProvider.Controllers.DeleteReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteReservationServlet</servlet-name>
+    <url-pattern>/DeleteReservationServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
