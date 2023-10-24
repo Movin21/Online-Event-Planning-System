@@ -1,0 +1,47 @@
+package com.Customer.Signup;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * Servlet implementation class customerUpdate
+ */
+public class customerUpdateServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = request.getParameter("name");
+		String address = request.getParameter("address");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		
+		boolean isTrue = CustomerDbUtil.updateAttendee(name,address,phone,email,username,password);
+
+		if (isTrue == true) {
+			
+			// Customer retrieve
+	
+			request.setAttribute("username",username);
+			RequestDispatcher dis = request.getRequestDispatcher("attendee.jsp");
+			dis.forward(request, response);
+			
+		} else {
+			RequestDispatcher dis = request.getRequestDispatcher("attendee.jsp");
+			dis.forward(request, response);
+		}
+	}
+	}
+
+
