@@ -137,7 +137,7 @@
         <button id="submit-button" type="submit" name="loginbtn" class="adminLoginButton">Log in</button>
       </div>
       <div id="signup-link">
-        Don't have an account? <a href="signup.html">Sign up</a>
+        Don't have an account? <a href="signup.jsp">Sign up</a>
       </div>
     </div>
   </form>

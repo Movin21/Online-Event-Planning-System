@@ -26,7 +26,7 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
-    color:orange;
+    color:#d05716;
     text-transform: uppercase;
     text-align: center;
 }
@@ -45,7 +45,7 @@ h2{
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    border-color: #01050a;
+    border-color: #d05716;
     color: gray;
 }
 
@@ -108,7 +108,7 @@ h2{
 
 .wrapper .form .input_field p{
     font-size: 14px;
-    color: orange;
+    color: #d05716;
 }
 
 .wrapper .form .input_field .check{
@@ -173,7 +173,7 @@ h2{
   body {
   margin-top:80px;
   padding: 0;
-  background-image: url("https://img.freepik.com/free-photo/beautiful-pink-decorated-wedding-serving-with-centerpiece-lightening-candles_8353-10052.jpg?w=996&t=st=1698147978~exp=1698148578~hmac=34b631d7b5c746c6bf60551bbd22b73fa497d9e2645bab2ccef68068f6eeaf59");
+  background-image: url("https://img.freepik.com/free-photo/festival-concert-show-theme-blur-background_1385-1400.jpg?w=1060&t=st=1698175326~exp=1698175926~hmac=44f119880aa0bfaac40c330c2a5ed15db5d6822c2c93cfa4f1ac4ed15d248f01");
   background-size: cover; 
   background-repeat: no-repeat; 
   background-attachment: fixed; 

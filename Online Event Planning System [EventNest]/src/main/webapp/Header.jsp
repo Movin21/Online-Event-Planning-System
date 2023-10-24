@@ -70,7 +70,7 @@
         <!--login signup buttons-->
         <div class="user-buttons">
             <button class="login"><a href="Login.jsp">Login</a></button>
-            <button class="signin"><a href="#">Sign In</a></button>
+            <button class="signin"><a href="signup.jsp">Sign In</a></button>
         </div>
     </div>  
 </body>

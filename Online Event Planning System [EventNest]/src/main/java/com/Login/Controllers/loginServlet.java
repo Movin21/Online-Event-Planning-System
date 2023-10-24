@@ -36,9 +36,7 @@ public class loginServlet extends HttpServlet {
 			isTrue = EventPlannerLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-				//session create
-				
-				session.setAttribute("userName", userName);
+
 				// navigate to Event page
 				RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 				dis.forward(request, response);
