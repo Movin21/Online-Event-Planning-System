@@ -1,5 +1,6 @@
 package com.Admin.AdminPortalContent.AttendeeSection.Model;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 public class Attendee {
 	private int attendeeId;
 	private String attendeeName;

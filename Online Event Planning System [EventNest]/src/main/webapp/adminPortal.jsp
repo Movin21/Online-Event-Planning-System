@@ -158,6 +158,11 @@ h4 {
 .logout-button a:hover {
   background-color: #D05716;
 }
+.event-image-column {
+    max-width: 100px; /* Adjust the max-width value as needed */
+    word-wrap: break-word; /* Wrap long text within the column */
+}
+
     </style>
 </head>
 
@@ -265,7 +270,7 @@ h4 {
             <td><c:out value="${event.eventName}" /></td>
             <td><c:out value="${event.venue}" /></td>
             <td><c:out value="${event.eventDate}" /></td>
-            <td><c:out value="${event.eventImageLink}" /></td>
+            <td class="event-image-column"><c:out value="${event.eventImageLink}" /></td>
             <td><c:out value="${event.eventDescription}" /></td>
             <td><c:out value="${event.ticketPrice}" /></td>
             <td><c:out value="${event.username}" /></td>

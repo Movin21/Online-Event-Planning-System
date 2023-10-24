@@ -20,6 +20,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 /**
  * Servlet implementation class AttendeeServlet
  */
