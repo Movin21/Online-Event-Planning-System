@@ -80,7 +80,7 @@ color: rgb(0, 0, 0);
 font-size: 18px;
 }
 
-
+/*Header Css*/
 .header
 {   
 width: 100%;
@@ -110,7 +110,8 @@ color: rgb(34, 38, 71);
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
-font-weight: bold;
+font-size: small;
+
 }
 
 .search-bar ::placeholder{
@@ -148,6 +149,7 @@ padding: 12px 16px;
 text-decoration: none;
 display: block;
 text-align: left;
+font-size: small;
 }
 
 .dropdown:hover .dropdown-content {
@@ -167,6 +169,7 @@ font-weight: bold;
 font-size: medium;
 float: right;
 padding: 10px;
+font-size: small;
 
 }
 
