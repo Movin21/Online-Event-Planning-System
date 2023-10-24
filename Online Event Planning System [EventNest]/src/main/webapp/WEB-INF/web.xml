@@ -111,6 +111,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+
     <display-name>deleteEventServlet</display-name>
     <servlet-name>deleteEventServlet</servlet-name>
     <servlet-class>com.eventPlanner.eventPlannerPortal.Controller.deleteEventServlet</servlet-class>
@@ -138,5 +139,34 @@
   <servlet-mapping>
     <servlet-name>updateEventServlet</servlet-name>
     <url-pattern>/updateEventServlet</url-pattern>
+=======
+    <display-name>HelpCenterServlet</display-name>
+    <servlet-name>HelpCenterServlet</servlet-name>
+    <servlet-class>com.HelpCenter.Controllers.HelpCenterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelpCenterServlet</servlet-name>
+    <url-pattern>/HelpCenterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteHelpCenterServlet</display-name>
+    <servlet-name>DeleteHelpCenterServlet</servlet-name>
+    <servlet-class>com.HelpCenter.Controllers.DeleteHelpCenterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteHelpCenterServlet</servlet-name>
+    <url-pattern>/DeleteHelpCenterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteHelpCenterServlet</display-name>
+    <servlet-name>deleteHelpCenterServlet</servlet-name>
+    <servlet-class>com.Admin.AdminPortalContent.HelpCenterResponse.Controllers.DeleteHelpCenterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteHelpCenterServlet</servlet-name>
+    <url-pattern>/deleteHelpCenterServlet</url-pattern>
+
   </servlet-mapping>
 </web-app>

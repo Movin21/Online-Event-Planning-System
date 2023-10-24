@@ -1,5 +1,6 @@
 package com.Admin.Controllers;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -8,16 +9,21 @@ import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
 import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
 import com.Admin.AdminPortalContent.Event.Model.Event;
 import com.Admin.AdminPortalContent.Event.Util.EventDBUtil;
+
+import com.Admin.AdminPortalContent.HelpCenterResponse.Util.HelpCenterResponseUtil;
+
 import com.Admin.AdminPortalContent.ServiceProvider.Model.Reservation;
 import com.Admin.AdminPortalContent.ServiceProvider.Utill.ReservationDBUtil;
 import com.Admin.Model.Admin;
 import com.Admin.Util.AdminDBUtil;
+import com.HelpCenter.Model.Message;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class adminLogin
@@ -37,7 +43,12 @@ public class adminLoginServlet extends HttpServlet {
 		Admin admin = new Admin(userName, password);
 		boolean isTrue = AdminDBUtil.validate(admin);
 
-		if (isTrue == true) {
+
+		if (isTrue) {
+			// session create
+			HttpSession session = request.getSession();
+			session.setAttribute("username", userName);
+
 			// attendee retrieve
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
@@ -49,6 +60,13 @@ public class adminLoginServlet extends HttpServlet {
 			// Service Provider retrieve
 			List<Reservation> reservations = ReservationDBUtil.getReservations();
 			request.setAttribute("reservations", reservations);
+
+			// Message retrieve
+			List<Message> Messages = HelpCenterResponseUtil.getHelpCenterEntries();
+			request.setAttribute("Messages", Messages);
+
+			int mcount = HelpCenterResponseUtil.countHelpCenterRecords();
+			request.setAttribute("MessageCount", mcount);
 
 			int atcount = AttendeeDBUtil.countRecords();
 			request.setAttribute("attendeeCount", atcount);

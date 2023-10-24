@@ -1,5 +1,6 @@
 package com.DBConnection;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ public class DBConnectivity {
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/onlineeventmanagementsystem";
 		String user = "root";
-		String password = "Lakmina0115722795";
+		String password = "movin123";
 
 		Connection con = null;
 

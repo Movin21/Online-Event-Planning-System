@@ -1,4 +1,12 @@
 <jsp:include page="./Header.jsp" />
+<%
+  // Check if the session exists
+  if (session.getAttribute("username") == null) {
+      response.sendRedirect("adminLoginPage.jsp");}
+  else {
+	  session.invalidate();
+  }
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -150,6 +158,11 @@ h4 {
 .logout-button a:hover {
   background-color: #D05716;
 }
+.event-image-column {
+    max-width: 100px; /* Adjust the max-width value as needed */
+    word-wrap: break-word; /* Wrap long text within the column */
+}
+
     </style>
 </head>
 
@@ -171,6 +184,11 @@ h4 {
     <h1>${EventCount}</h1>
     <h4>Ongoing Events</h4>
   </div>
+  
+  <div class="user-count-card">
+    <h1>${MessageCount}</h1>
+    <h4>Inquiries to Respond</h4>
+  </div>
 
   <div class="user-count-card">
     <h1>${ReservationCount}</h1>
@@ -191,9 +209,7 @@ h4 {
             <th>Address</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Tickets</th>
-            <th>Previously Attended Events</th>
-            <th>Username</th>
+            <th>Uername</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="attendee" items="${attendeeDetails}">
@@ -203,8 +219,6 @@ h4 {
                 <td><c:out value="${attendee.attendeeAddress}" /></td>
                 <td><c:out value="${attendee.attendeePhone}" /></td>
                 <td><c:out value="${attendee.attendeeEmail}" /></td>
-                <td><c:out value="${attendee.tickets}" /></td>
-                <td><c:out value="${attendee.previouslyAttendedEvents}" /></td>
                 <td><c:out value="${attendee.username}" /></td>
 
                 <td>
@@ -215,8 +229,6 @@ h4 {
                             <c:param name="attendeeAddress" value="${attendee.attendeeAddress}" />
                             <c:param name="attendeePhone" value="${attendee.attendeePhone}" />
                             <c:param name="attendeeEmail" value="${attendee.attendeeEmail}" />
-                            <c:param name="tickets" value="${attendee.tickets}" />
-                            <c:param name="previouslyAttendedEvents" value="${attendee.previouslyAttendedEvents}" />
                             <c:param name="username" value="${attendee.username}" />
                             <c:param name="password" value="${attendee.password}" />
                         </c:url>
@@ -226,7 +238,7 @@ h4 {
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <div class="delete">
-                        <a href="deleteAttendeeServlet?username=${username}">
+                        <a href="deleteAttendeeServlet?username=${attendee.username}">
                             <input type="button" value="Delete" name="Delete">
                         </a>
                     </div>
@@ -258,7 +270,7 @@ h4 {
             <td><c:out value="${event.eventName}" /></td>
             <td><c:out value="${event.venue}" /></td>
             <td><c:out value="${event.eventDate}" /></td>
-            <td><c:out value="${event.eventImageLink}" /></td>
+            <td class="event-image-column"><c:out value="${event.eventImageLink}" /></td>
             <td><c:out value="${event.eventDescription}" /></td>
             <td><c:out value="${event.ticketPrice}" /></td>
             <td><c:out value="${event.username}" /></td>
@@ -315,9 +327,42 @@ h4 {
         </tr>
     </c:forEach>
 </table>
+
+<h3>Inquiries</h3>
+<table border="1">
+    <tr>
+        <th>Inquiry ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Issue Type</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <c:forEach var="message" items="${Messages}">
+        <tr>
+            <td><c:out value="${message.id}" /></td>
+            <td><c:out value="${message.name}" /></td>
+            <td><c:out value="${message.email}" /></td>
+            <td><c:out value="${message.phone}" /></td>
+            <td><c:out value="${message.issueType}" /></td>
+            <td><c:out value="${message.description}" /></td>
+
+            <td>
+                <div class="delete">
+                    <a href="deleteHelpCenterServlet?id=${message.id}">
+                        <input type="button" value="Mark As Read" >
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
+
 <div class="logout-button">
   <a href="adminLoginPage.jsp">Logout</a>
 </div>
 
 </html>
 <jsp:include page="./Footer.jsp" />
+

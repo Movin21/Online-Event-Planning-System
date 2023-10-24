@@ -81,12 +81,6 @@
     <label for="email">Email:</label>
     <input type="text" name="attendeeEmail" value="<%= request.getParameter("attendeeEmail") %>" required><br>
     
-    <label for="tickets">Number of Tickets:</label>
-    <input type="number" name="tickets" value="<%= request.getParameter("tickets") %>" required><br>
-    
-    <label for="previouslyAttendedEvents">Previously Attended Events:</label>
-    <input type="text" name="previouslyAttendedEvents" value="<%= request.getParameter("previouslyAttendedEvents") %>" required><br>
-    
     <label for="username">Username:</label>
     <input type="text" name="username" value="<%= request.getParameter("username") %>" required><br>
     

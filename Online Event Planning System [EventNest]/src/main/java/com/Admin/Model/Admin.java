@@ -1,5 +1,6 @@
 package com.Admin.Model;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 public class Admin {
 	private String username;
 	private String password;

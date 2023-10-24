@@ -81,12 +81,6 @@
     <label for="email">Email:</label>
     <input type="text" name="email" required><br>
 
-    <label for="tickets">Number of Tickets:</label>
-    <input type="number" name="tickets" required><br>
-
-    <label for="previouslyAttendedEvents">Previously Attended Events:</label>
-    <input type="text" name="previouslyAttendedEvents" required><br>
-
     <label for="username">Username:</label>
     <input type="text" name="username" required><br>
 

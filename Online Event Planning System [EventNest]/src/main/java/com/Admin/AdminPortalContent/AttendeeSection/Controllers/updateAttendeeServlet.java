@@ -8,15 +8,21 @@ import com.Admin.AdminPortalContent.AttendeeSection.Model.Attendee;
 import com.Admin.AdminPortalContent.AttendeeSection.Util.AttendeeDBUtil;
 import com.Admin.AdminPortalContent.Event.Model.Event;
 import com.Admin.AdminPortalContent.Event.Util.EventDBUtil;
+
+import com.Admin.AdminPortalContent.HelpCenterResponse.Util.HelpCenterResponseUtil;
 import com.Admin.AdminPortalContent.ServiceProvider.Model.Reservation;
 import com.Admin.AdminPortalContent.ServiceProvider.Utill.ReservationDBUtil;
+import com.HelpCenter.Model.Message;
+
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 /**
  * Servlet implementation class updateAttendee
  */
@@ -35,17 +41,17 @@ public class updateAttendeeServlet extends HttpServlet {
 		String address = request.getParameter("attendeeAddress");
 		String phone = request.getParameter("attendeePhone");
 		String email = request.getParameter("attendeeEmail");
-		int tickets = Integer.parseInt(request.getParameter("tickets"));
-		String previouslyAttendedEvents = request.getParameter("previouslyAttendedEvents");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, tickets,
-				previouslyAttendedEvents, username, password);
+		Attendee attendee = new Attendee(attendeeId, attendeeName, address, phone, email, username, password);
 		boolean isTrue = AttendeeDBUtil.updateAttendee(attendee);
 
 		PrintWriter out = response.getWriter();
-		if (isTrue == true) {
+		if (isTrue) {
+			// session token create
+			HttpSession session = request.getSession();
+			session.setAttribute("username", "token");
 			// update the view
 			List<Attendee> attendeeDetails = AttendeeDBUtil.getAttendee();
 			request.setAttribute("attendeeDetails", attendeeDetails);
@@ -56,6 +62,12 @@ public class updateAttendeeServlet extends HttpServlet {
 			// Service Provider retrieve
 			List<Reservation> reservations = ReservationDBUtil.getReservations();
 			request.setAttribute("reservations", reservations);
+
+			List<Message> Messages = HelpCenterResponseUtil.getHelpCenterEntries();
+			request.setAttribute("Messages", Messages);
+
+			int mcount = HelpCenterResponseUtil.countHelpCenterRecords();
+			request.setAttribute("MessageCount", mcount);
 
 			int atcount = AttendeeDBUtil.countRecords();
 			request.setAttribute("attendeeCount", atcount);

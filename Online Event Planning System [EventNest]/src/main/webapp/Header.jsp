@@ -35,16 +35,15 @@
         <!--search bar-->
         
             <div class="search-bar">
-            
-                <input type="text" placeholder="Search events...." name="keyWord">
-                
-                 <c:url value="SearchBarServlet" var="SearchBarServlet">
-                            <c:param name="keyWord" value="${keyWord}" />
-                        </c:url>
-                <a href="${SearchBarServlet}">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
+
+    <form action="SearchBarServlet" method="GET">
+        <input type="text" placeholder="Search events...." name="keyWord">
+        <button type="submit" class="searchButton">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</div>
+
             <!--navigation bar-->
             <div class="menu-item">
                 <ul class="nav">
@@ -55,7 +54,7 @@
                     <li class="dropdown">
                         <a href="#">Help Center</a>
                         <div class="dropdown-content">
-                            <a href="#">Help Center</a>
+                            <a href="HelpCenter.jsp">Help Center</a>
                             <a href="#">Contact Us</a>
                         </div>
                     </li>

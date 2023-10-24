@@ -1,5 +1,8 @@
 package com.Admin.AdminPortalContent.ServiceProvider.Model;
 
+
+/*Author:IT22332608 | Liyanage M.I.H*/
+
 public class Reservation {
 	private int reservationId;
 	private String reservationName;
