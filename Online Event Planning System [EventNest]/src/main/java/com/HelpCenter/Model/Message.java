@@ -1,5 +1,6 @@
 package com.HelpCenter.Model;
 
+/*Author:IT22332608 | Liyanage M.I.H*/
 public class Message {
 	private int id;
 
