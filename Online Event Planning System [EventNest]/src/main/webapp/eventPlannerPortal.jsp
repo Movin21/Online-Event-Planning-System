@@ -1,3 +1,25 @@
+<%
+  // Check if the session exists
+  if (session.getAttribute("username") == null) {
+      response.sendRedirect("Login.jsp");
+  } else {
+      session.invalidate();
+  }
+%>
+<!--Importing the Event DB packages-->
+
+<%@ page import="com.Event.Model.Event" %>
+<%@ page import="com.Event.Util.EventDBUtil" %>
+
+<%@ page import="java.util.List" %>
+   
+<!--Retriving Details Using Scriplets!-->
+<%	
+	List<Event> eventDetails = EventDBUtil.getEvent();
+    request.setAttribute("eventDetail", eventDetails);
+%>
+
+
 <jsp:include page="./Header.jsp" />
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>

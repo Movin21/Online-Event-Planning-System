@@ -8,6 +8,7 @@
     <%@ page import="java.util.List" %>
     <%@ page import="com.Customer.Signup.Customer" %>
     <%@ page import="com.Customer.Signup.CustomerDbUtil"%>
+    
     <%String username = (String) request.getAttribute("username");
     List<Customer> attendee=CustomerDbUtil.getCustomerDetails(username);
 	 request.setAttribute("attendeeDetails", attendee);%> 

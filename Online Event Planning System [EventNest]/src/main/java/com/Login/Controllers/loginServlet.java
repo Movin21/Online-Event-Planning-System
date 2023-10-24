@@ -31,12 +31,13 @@ public class loginServlet extends HttpServlet {
 		char letter2 = userName.charAt(1);
 
 		boolean isTrue = false;
-		HttpSession session = request.getSession();
+		
 		if (letter1 == 'E' && letter2 == 'P') {
 			isTrue = EventPlannerLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-
+				HttpSession session = request.getSession();
+				session.setAttribute("username", userName);
 				// navigate to Event page
 				RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 				dis.forward(request, response);

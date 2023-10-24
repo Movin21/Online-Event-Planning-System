@@ -1,21 +1,3 @@
-
-<!--Importing the Event DB packages-->
-
-<%@ page import="com.Event.Model.Event" %>
-<%@ page import="com.Event.Util.EventDBUtil" %>
-
-<%@ page import="java.util.List" %>
-<%@ page import="com.ServiceProvider.Util.*" %>
-<%@ page import="com.ServiceProvider.Model.*" %>
-
-    
-<!--Retriving Details Using Scriplets!-->
-<%	
-	List<Event> eventDetails = EventDBUtil.getEvent();
-    request.setAttribute("eventDetail", eventDetails);
-%>
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
