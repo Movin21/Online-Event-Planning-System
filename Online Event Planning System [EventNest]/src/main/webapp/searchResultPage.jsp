@@ -1,48 +1,3 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Search Results</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    
-    
-            
-              <table border="1">
-        <tr>
-            <th>Event ID</th>
-            <th>Event Name</th>
-            <th>Venue</th>
-            <th>Event Date</th>
-            <th>Event Description</th>
-            <th>Ticket Price</th>
-            
-        </tr>
-        
-        <c:forEach var="event" items="${results}">
-            <tr>
-                <td><c:out value="${event.eventId}" /></td>
-                <td><c:out value="${event.eventName}" /></td>
-                <td><c:out value="${event.venue}" /></td>
-                <td><c:out value="${event.eventDate}" /></td>
-                <td><c:out value="${event.eventDescription}" /></td>
-                <td><c:out value="${event.ticketPrice}" /></td>
-             
-            </tr>
-        </c:forEach>
-    </table>
-            
-        
-    
-    
-    <p><a href="Home.jsp">Back to Home</a></p>
-</body>
-</html>
-=======
 <jsp:include page="./Header.jsp" />
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -63,25 +18,33 @@
             margin:  20px; /* Add a fixed margin on both sides */
      
         }
+        
+        .card img{
+        	border-radius: 20px;
+        }
+
+        .cards_container {
+            margin-top: 70px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap; /* Allow cards to wrap to the next row */
+            gap: 2%; /* Adjust the space between cards */
+            justify-content: space-between; /* Distribute space evenly between cards */
+            margin: 20px; /* Add a fixed margin on both sides */
+            border-radius: 20px;
+        }
 
         .card {
-        	margin-top: 70px;
+            margin-top: 70px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             background: rgb(225, 225, 225);
-            height: 400px;
-            width: 100%; /* Divide the row into four columns, leave some space for gaps */
+            height: 420px;
+            width: 22%; /* Divide the row into four columns, leave some space for gaps */
             border-radius: 20px;
             transition: transform 0.7s, box-shadow 0.7s; /* Apply transitions to entire card */
             box-shadow: 0 1px 10px transparent; /* Initial shadow is transparent */
-            padding: 3px;
-        }
-
-        .card img {
-            width: 292px;
-            height: 180px;
-            border-radius: 10px;
+            padding: 1px;
         }
 
         .card:hover {
@@ -163,5 +126,4 @@
 </body>
 </html>
 
-<jsp:include page="./Footer.jsp" />
-
+<jsp:include page="./Footer.jsp"/>
