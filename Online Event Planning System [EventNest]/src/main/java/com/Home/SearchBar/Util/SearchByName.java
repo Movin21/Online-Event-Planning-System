@@ -1,9 +1,5 @@
 package com.Home.SearchBar.Util;
 
-import static com.Home.SearchBar.Util.SearchBarUtil.con;
-import static com.Home.SearchBar.Util.SearchBarUtil.rs;
-import static com.Home.SearchBar.Util.SearchBarUtil.stmt;
-
 import java.util.ArrayList;
 
 import com.Admin.AdminPortalContent.Event.Model.Event;

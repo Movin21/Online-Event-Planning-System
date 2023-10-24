@@ -139,7 +139,8 @@
   <servlet-mapping>
     <servlet-name>updateEventServlet</servlet-name>
     <url-pattern>/updateEventServlet</url-pattern>
-=======
+  </servlet-mapping>
+  	<servlet>
     <display-name>HelpCenterServlet</display-name>
     <servlet-name>HelpCenterServlet</servlet-name>
     <servlet-class>com.HelpCenter.Controllers.HelpCenterServlet</servlet-class>
