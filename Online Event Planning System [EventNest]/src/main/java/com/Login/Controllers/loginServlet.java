@@ -59,7 +59,7 @@ public class loginServlet extends HttpServlet {
 			
 			if (isTrue == true) {
 							
-				RequestDispatcher dis = request.getRequestDispatcher("#");
+				RequestDispatcher dis = request.getRequestDispatcher("res-list.jsp");
 				dis.forward(request, response);
 
 			} else {

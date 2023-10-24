@@ -1,3 +1,5 @@
+<jsp:include page="Header.jsp" />
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -81,7 +83,7 @@
 </head>
 
 <body>
-    <jsp:include page="Header.jsp" />
+    
     <header id="navbar">
         <nav id="navbar" class="navbar navbar-expand-md navbar-dark">
             <div>
@@ -158,7 +160,9 @@
             </table>
         </div>
     </div>
-    <jsp:include page="Footer.jsp" />
+    
 </body>
 
 </html>
+
+<jsp:include page="Footer.jsp" />

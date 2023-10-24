@@ -38,10 +38,6 @@ public class InsertReservationServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		if (isTrue == true) {
-			// Service Provider retrieve data
-			List<Reservation> reservations = ReservationDBUtil.getReservations();
-			request.setAttribute("reservations", reservations);
-
 
 			RequestDispatcher dis = request.getRequestDispatcher("res-list.jsp");
 			dis.forward(request, response);

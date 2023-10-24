@@ -1,13 +1,24 @@
 
-<!--Importing the packages-->
+<!--Importing the Event DB packages-->
 <%@ page import="java.util.List" %>
 <%@ page import="com.Event.Model.Event" %>
 <%@ page import="com.Event.Util.EventDBUtil" %>
+
+
+<%@ page import="com.ServiceProvider.Util.*" %>
+<%@ page import="com.ServiceProvider.Model.*" %>
+
+
 
 <!--Retriving Details Using Scriplets!-->
 <%	
 	List<Event> eventDetails = EventDBUtil.getEvent();
     request.setAttribute("eventDetail", eventDetails);
+    
+	// Service Provider retrieve data
+	List<Reservation> reservations = ReservationDBUtil.getReservations();
+	request.setAttribute("reservations", reservations);
+
 %>
 
 
@@ -47,15 +58,15 @@
             <!--navigation bar-->
             <div class="menu-item">
                 <ul class="nav">
-                    <li><a href="#">Find Events</a></li>
+                    <li><a href="Event.jsp">Find Events</a></li>
                     <li><a href="#">Buy Tickets</a></li>
-                    <li><a href="#">Pricing</a></li>
+                    <li><a href="Pricing.jsp">Pricing</a></li>
                     <!--dropdown menu-->
                     <li class="dropdown">
                         <a href="#">Help Center</a>
                         <div class="dropdown-content">
                             <a href="HelpCenter.jsp">Help Center</a>
-                            <a href="#">Contact Us</a>
+                            <a href="HelpCenter.jsp">Contact Us</a>
                         </div>
                     </li>
             
@@ -64,7 +75,7 @@
 
         <!--login signup buttons-->
         <div class="user-buttons">
-            <button class="login"><a href="#">Login</a></button>
+            <button class="login"><a href="Login.jsp">Login</a></button>
             <button class="signin"><a href="#">Sign In</a></button>
         </div>
     </div>  
