@@ -85,7 +85,7 @@
     <input type="text" name="description" value="<%= request.getParameter("eventDescription") %>" required><br>
     
     <label for="ticketPrice">Ticket Price:</label>
-    <input type="text" name="ticketPrice" value="<%= request.getParameter("ticketPrice") %>" required><br>
+    <input type="number" name="ticketPrice" value="<%= request.getParameter("ticketPrice") %>" required><br>
  
     <input type="submit" value="Update Event Details">  
 </form>

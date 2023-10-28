@@ -171,7 +171,7 @@ vertical-align: middle;
       <div class="section_wrapper">
         <!-- section header -->
         <div>
-          <h2 class="section_header" align="center">Get paid, earn more</h2>
+          <h2 class="section_header" align="center">Event hosing made easy</h2>
           <h3 class="section_description" align="center">
             Do what you love and earn more money with low-cost fees and quicker
             payouts

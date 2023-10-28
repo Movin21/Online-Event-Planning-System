@@ -158,7 +158,7 @@
             <div class="venue">
             <span class="calendar-icon"></span><p class="h4tag"><c:out value="${event.eventDate}" /></p>
             </div>
-            <a href="About.php"><h4 class="arrow">Get Tickets $<c:out value="${event.ticketPrice}" /></h4></a>
+            <a href="PayMentGateway.jsp"><h4 class="arrow">Get Tickets $<c:out value="${event.ticketPrice}" /></h4></a>
         </div>
     </c:forEach>
 </div>

@@ -46,7 +46,7 @@ public class SearchBarServlet extends HttpServlet {
 				PrintWriter out = response.getWriter();
 				response.setContentType("text/html");
 				out.println("<script type = 'text/javascript'> "
-						+ "alert('Sorry!! No data available for the Search Query');" + "location='Home.jsp'</script>");
+						+ "alert('Sorry!! No such events are avilible');" + "location='Home.jsp'</script>");
 			}
 		} else {
 			PrintWriter out = response.getWriter();

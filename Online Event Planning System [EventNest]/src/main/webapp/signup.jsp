@@ -198,14 +198,14 @@ h2{
            
             
             <div class="input_field">
-                <input type="text" class="input" placeholder="E-mail Address" id="email" name="email">
+                <input type="email" class="input" placeholder="E-mail Address" id="email" name="email">
             </div>
              <div class="input_field">
                 <textarea class="textarea" placeholder="Address" name="address"></textarea>
             </div>
             
             <div class="input_field">
-                <input type="text" class="input" placeholder="Phone Number" id="phoneNumber" name="phone">
+                <input type="phone" class="input" placeholder="Phone Number" id="phoneNumber" name="phone">
             </div>
             <div class="input_field">
                 <input type="text" class="input" placeholder="User Name" id="email" name="username">

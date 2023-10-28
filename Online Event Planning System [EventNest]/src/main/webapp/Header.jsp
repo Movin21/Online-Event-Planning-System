@@ -35,7 +35,6 @@
             <div class="menu-item">
                 <ul class="nav">
                     <li><a href="Event.jsp">Find Events</a></li>
-                    <li><a href="#">Buy Tickets</a></li>
                     <li><a href="Pricing.jsp">Pricing</a></li>
                     <!--dropdown menu-->
                     <li class="dropdown">

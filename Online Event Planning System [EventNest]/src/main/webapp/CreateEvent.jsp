@@ -79,7 +79,7 @@
     <input type="text" name="eventDate" required><br>
 
     <label for="imgLink">Image Link:</label>
-    <input type="text" name="email" required><br>
+    <input type="email" name="email" required><br>
 
     <label for="description">Event Description:</label>
     <input type="text" name="description" required><br>
