@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -43,7 +45,9 @@ public class DeleteReservationServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		if (isTrueval) {
-
+			//session token creating
+			HttpSession session = request.getSession();
+			session.setAttribute("SPUsername", "token");
 			// Service Provider retrieve data
 			List<Reservation> res = ReservationDBUtil.getReservations();
 			request.setAttribute("reservations", res);

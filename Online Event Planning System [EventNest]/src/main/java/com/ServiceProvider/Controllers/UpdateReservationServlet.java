@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -61,7 +63,9 @@ public class UpdateReservationServlet extends HttpServlet {
 			boolean isSuccess = ReservationDBUtil.updateReservation(reservation);
 			PrintWriter out = response.getWriter();
 			if (isSuccess) {
-
+				//session token creating
+				HttpSession session = request.getSession();
+				session.setAttribute("SPUsername", "token");
 				// Service Provider data retrieval
 				List<Reservation> res = ReservationDBUtil.getReservations();
 				request.setAttribute("reservations", res);

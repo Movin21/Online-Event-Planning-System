@@ -36,8 +36,9 @@ public class loginServlet extends HttpServlet {
 			isTrue = EventPlannerLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
+				//session token creating
 				HttpSession session = request.getSession();
-				session.setAttribute("username", userName);
+				session.setAttribute("EPUsername", userName);
 				// navigate to Event page
 				RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 				dis.forward(request, response);
@@ -54,7 +55,9 @@ public class loginServlet extends HttpServlet {
 			isTrue = ServiceProviderLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-			
+				//session token creating
+				HttpSession session = request.getSession();
+				session.setAttribute("SPUsername", userName);
 				RequestDispatcher dis = request.getRequestDispatcher("res-list.jsp");
 				dis.forward(request, response);
 
@@ -70,7 +73,9 @@ public class loginServlet extends HttpServlet {
 			isTrue = AtendeeLoginDBUtil.validate(lg);
 
 			if (isTrue == true) {
-							
+				//session token creating
+				HttpSession session = request.getSession();
+				session.setAttribute("AttendeeUsername",userName);		
 				// navigate to  customer portal
 				request.setAttribute("username",userName);
 				RequestDispatcher dis = request.getRequestDispatcher("attendee.jsp");

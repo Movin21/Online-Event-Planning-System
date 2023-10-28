@@ -1,4 +1,11 @@
-<jsp:include page="./Header.jsp" />
+<%
+  // Check if the session exists
+  if (session.getAttribute("AttendeeUsername") == null) {
+      response.sendRedirect("Login.jsp");
+  } else {
+      session.invalidate();
+  }
+%><jsp:include page="./Header.jsp" />
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>

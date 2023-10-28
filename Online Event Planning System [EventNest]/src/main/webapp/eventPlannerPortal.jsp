@@ -1,4 +1,11 @@
-<!--Importing the Event DB packages-->
+<%
+  // Check if the session exists
+  if (session.getAttribute("EPUsername") == null) {
+      response.sendRedirect("Login.jsp");
+  } else {
+      session.invalidate();
+  }
+%><!--Importing the Event DB packages-->
 
 <%@ page import="com.Event.Model.Event" %>
 <%@ page import="com.Event.Util.EventDBUtil" %>

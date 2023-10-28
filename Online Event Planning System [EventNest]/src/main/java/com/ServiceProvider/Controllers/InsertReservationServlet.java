@@ -14,6 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class insertReservationServlet
@@ -38,7 +39,9 @@ public class InsertReservationServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		if (isTrue == true) {
-
+			//session token creating
+			HttpSession session = request.getSession();
+			session.setAttribute("SPUsername", "token");
 			RequestDispatcher dis = request.getRequestDispatcher("res-list.jsp");
 			dis.forward(request, response);
 		} else {

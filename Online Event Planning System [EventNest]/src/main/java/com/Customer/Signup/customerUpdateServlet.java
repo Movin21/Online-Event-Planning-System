@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 /**
@@ -29,7 +31,9 @@ public class customerUpdateServlet extends HttpServlet {
 		boolean isTrue = CustomerDbUtil.updateAttendee(name,address,phone,email,username,password);
 
 		if (isTrue == true) {
-			
+			//session token creating
+			HttpSession session = request.getSession();
+			session.setAttribute("AttendeeUsername", "token");
 			// Customer retrieve
 	
 			request.setAttribute("username",username);

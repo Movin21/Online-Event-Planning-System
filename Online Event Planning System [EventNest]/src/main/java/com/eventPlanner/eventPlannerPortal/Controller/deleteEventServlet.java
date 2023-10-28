@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -25,6 +27,9 @@ public class deleteEventServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		if (isTrue) {
+			//session token creating
+			HttpSession session = request.getSession();
+			session.setAttribute("EPUsername", "token");
 			//Redirecting to the ecntPlannerProtal
 			RequestDispatcher dis = request.getRequestDispatcher("eventPlannerPortal.jsp");
 			dis.forward(request, response);
